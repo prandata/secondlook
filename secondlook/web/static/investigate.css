@@ -1,0 +1,81 @@
+/* W10 desk, part 2: the caption box and the Muse Glimmer investigator. Uses the page's colours and type from app.css. */
+
+/* The caption box, under the image drop. Its error text sits on cream, where the page's rust is 4.37:1,
+   so it uses the darker --rust-text from app.css (5.54:1) to meet WCAG AA for small text. */
+.caption-field { margin-top: 14px; }
+.caption-field label { font-weight: 600; font-size: 14.5px; display: block; margin-bottom: 6px; }
+.caption-field .optional { font-weight: 400; color: var(--soft); }
+#caption { width: 100%; font: 15px/1.45 var(--sans); color: var(--ink); background: #fff; border: 1px solid var(--line);
+           border-radius: 8px; padding: 9px 10px; resize: vertical; min-height: 58px; }
+#caption[aria-invalid="true"] { border-color: var(--rust); box-shadow: 0 0 0 1px var(--rust); }
+.caption-field .hint { color: var(--soft); font-size: 13px; margin: 6px 0 0; max-width: 70ch; }
+#caption-count { white-space: nowrap; }
+#caption-count.over { color: var(--rust-text); font-weight: 700; }
+.caption-error { margin: 6px 0 0; color: var(--rust-text); font-weight: 600; font-size: 14px; }
+#caption-again, #inv-go { font: 600 15px/1 var(--sans); color: var(--cream); background: var(--ink); border: 0;
+                          border-radius: 8px; padding: 11px 16px; cursor: pointer; margin-top: 10px; }
+#caption-again { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); padding: 9.5px 14px; }
+#caption-again:hover { border-color: var(--rust-text); color: var(--rust-text); }
+#inv-go:hover { background: var(--rust-text); }
+#inv-go[aria-disabled="true"] { cursor: progress; opacity: .6; }
+#inv-go[aria-disabled="true"]:hover { background: var(--ink); }
+#caption:focus-visible, #caption-again:focus-visible, #inv-go:focus-visible, .inv-answer:focus-visible {
+  outline: 3px solid var(--rust); outline-offset: 3px; }
+
+/* The deep check, under the answer */
+.investigate { margin-top: 24px; background: var(--paper); border: 1px solid var(--line); border-left: 5px solid var(--soft);
+               border-radius: 10px; padding: 16px 18px; }
+.investigate[aria-busy="true"] { border-left-color: var(--rust); }
+.investigate h3 { margin: 0 0 6px; }
+.investigate h4 { font: 700 15px/1.3 var(--sans); margin: 16px 0 6px; }
+.inv-local { margin: 0; font-weight: 600; font-size: 14.5px; max-width: 70ch; }
+.inv-about { margin: 4px 0 0; color: var(--soft); font-size: 13.5px; max-width: 70ch; }
+.inv-sample { margin: 10px 0 0; color: var(--soft); font-size: 14px; }
+.inv-time { margin: 10px 0 0; font-size: 14px; font-variant-numeric: tabular-nums; }
+#inv-status { min-height: 1.5em; margin: 8px 0 0; color: var(--soft); font-size: 14.5px; }
+/* A262: an empty status line takes no room, so a box with nothing below its first line has no empty padding. */
+#inv-status:empty { min-height: 0; margin: 0; }
+#inv-status.error { color: var(--rust-text); font-weight: 600; }
+.inv-setup { margin-top: 8px; padding: 10px 12px; background: #EFE9DB; border-radius: 6px; font-size: 14px; }
+.inv-setup p { margin: 0 0 6px; }
+.inv-setup pre { margin: 6px 0; padding: 10px 12px; background: var(--ink); color: var(--cream); border-radius: 6px;
+                 overflow-x: auto; font-size: 13.5px; }
+.inv-setup code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.inv-note { margin-top: 12px; border-top: 1px solid var(--line); padding-top: 12px; }
+.inv-answer { font: 700 19px/1.3 var(--serif); margin: 6px 0 10px; outline-offset: 4px; }
+.inv-lines, .inv-steps { margin: 0; padding-left: 22px; font-size: 14.5px; }
+.inv-lines li, .inv-steps li { margin: 0 0 6px; }
+/* M2's step lines carry their own numbers ("1. Ran the file checks..."), so this list adds none. */
+.inv-lines { list-style: none; padding-left: 0; }
+.inv-steps .step-head { display: block; font-weight: 600; }
+.inv-steps .step-head code { font: 600 12.5px/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+                             background: #EFE9DB; padding: 1px 5px; border-radius: 4px; }
+.inv-steps .step-result { display: block; overflow-wrap: anywhere; }
+.inv-steps li.refused .step-head { color: var(--rust-text); }
+.inv-reading { margin: 0; padding-left: 20px; font-size: 14.5px; }
+.inv-reading li { overflow-wrap: anywhere; margin-bottom: 4px; }
+/* No box inside the deep-check box: each card is a row under a rule. */
+.inv-card { border-top: 1px solid var(--line); padding: 12px 0 4px; }
+.inv-card .finding { margin: 0 0 8px; }
+.inv-fc-pointer { margin: 0 0 8px; font-size: 14.5px; color: var(--soft); }
+.inv-card dl { margin: 0; display: grid; grid-template-columns: 130px 1fr; gap: 4px 12px; font-size: 14.5px; }
+.inv-card dt { font-weight: 700; }
+.inv-card dt.limit { color: var(--rust-text); }
+.inv-card dd { margin: 0; overflow-wrap: anywhere; }
+.inv-card dd.missing { color: var(--rust-text); font-weight: 600; }
+/* DAT-850: a recorded run. The offer sits where the live button would; the label leads the note it belongs to. */
+.inv-recorded-offer { margin: 10px 0 0; font-size: 14.5px; font-weight: 600; max-width: 70ch; }
+#inv-recorded-go { font: 600 15px/1 var(--sans); color: var(--ink); background: transparent; border: 1.5px solid var(--ink);
+                   border-radius: 8px; padding: 0 16px; min-height: 44px; display: inline-flex; align-items: center;
+                   cursor: pointer; margin-top: 10px; }
+#inv-recorded-go:hover { border-color: var(--rust-text); color: var(--rust-text); }
+#inv-recorded-go:focus-visible, .inv-recorded-label:focus-visible { outline: 3px solid var(--rust); outline-offset: 3px; }
+.inv-recorded-caption { margin: 0 0 12px; font-size: 15px; max-width: 70ch; overflow-wrap: anywhere; }
+.inv-recorded-label { margin: 0 0 12px; padding: 9px 12px; background: #EFE9DB; border-left: 4px solid var(--ink);
+                      border-radius: 4px; font-weight: 700; font-size: 15px; scroll-margin-top: 16px; }
+.inv-meta { color: var(--soft); font-size: 12px; margin: 12px 0 0; overflow-wrap: anywhere; }
+
+@media (max-width: 560px) {
+  .investigate { padding: 14px; }
+  .inv-card dl { grid-template-columns: 1fr; }
+}

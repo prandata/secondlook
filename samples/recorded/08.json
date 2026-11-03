@@ -1,0 +1,180 @@
+{
+  "schema": "second-look-recorded-run/1",
+  "sample": {
+    "id": "08",
+    "file": "08-iptc-ai-label-firefly-mountain-landscape.jpg",
+    "sha256": "70f5070988eeca4669ca22f512e531938e5ad54b0cc6fc4d2001e53a289d5936",
+    "licence": "Public domain",
+    "credit": "Adobe Firefly Image 3, prompted by Jiří Vedral, via Wikimedia Commons; label added by Second Look"
+  },
+  "caption": null,
+  "model": {
+    "name": "Muse Glimmer 30B",
+    "served_as": "muse-glimmer",
+    "file": "Muse-Glimmer-30B-KQuant-17GB-Q4_K_M.gguf",
+    "sha256": "4cc57c0f51040a226e5a72cc47b7613f7772950e460a665f7083de89f183f60e",
+    "projector_file": "mmproj-Muse-Glimmer-30B-Q4_K_M.gguf",
+    "projector_sha256": "f48b452316f9b213758e8659444029b961a24a07f99a1abb2a9f88b06f7c00c6"
+  },
+  "llama_cpp_build": "b11669-620d2225c",
+  "git_commit": "15cdea61e3865415a1a3bb46484203910a0cc4fd",
+  "machine": "Apple M5 Max (128 GB)",
+  "os": "macOS-26.6.2-arm64-arm-64bit",
+  "date_utc": "2026-10-29T15:05:10Z",
+  "seconds": 60.0,
+  "seconds_cover": "the whole deep check, the file checks included; their weights were loaded before timing, as the page loads them before it says Ready",
+  "note": {
+    "file": "08-iptc-ai-label-firefly-mountain-landscape.jpg",
+    "answer": "concerns",
+    "summary": "1 concern found; see the reasons. None of them is proof on its own.",
+    "evidence": [
+      {
+        "rung": "iptc",
+        "finding": "Unsigned IPTC metadata says it was made with generative AI (DigitalSourceType: trainedAlgorithmicMedia).",
+        "proves": "A tool or person wrote this source label into the file's metadata.",
+        "does_not_prove": "That the label is true: XMP is unsigned and anyone can add, change or remove it, and most platforms strip it on upload.",
+        "strength": "metadata",
+        "raw": {
+          "field": "Iptc4xmpExt:DigitalSourceType",
+          "values": [
+            "http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia"
+          ],
+          "source_class": "ai",
+          "ai_label": true
+        }
+      },
+      {
+        "rung": "classifier",
+        "finding": "Community Forensics detector score 0.019 out of 1. This score raises no concern on its own.",
+        "proves": "Nothing on its own. A threshold of 0.432 was frozen in advance, and our test of it failed. In that test, the upper bound on false flags for photos in their original format was 9.7%, above the 2% limit. See docs/RESULTS-v2.md.",
+        "does_not_prove": "A low score is not proof that a camera took it. Many AI images score low, especially after compression or from generators the model never saw.",
+        "strength": "none",
+        "raw": {
+          "score": 0.019089,
+          "model": "Community Forensics ViT-S/16 384 (OwensLab/commfor-model-384)",
+          "model_repo": "OwensLab/commfor-model-384",
+          "model_revision": "6076002bf0d9dd37537f965ee2f06f826c333b61",
+          "weights_sha256": "b89f36275f3bf5e2b040eee36597a8f19db051bff9a473a9cf7b2466284fb387",
+          "device": "mps",
+          "seconds": 0.223,
+          "threshold": 0.4319957792758942,
+          "above_threshold": false,
+          "threshold_file": "secondlook/rungs/classifier_threshold.json",
+          "threshold_file_sha256": "686e0e6379be42271501c7016e4c16b1cdfef759904818f6382c5f37479eb53c",
+          "dev_split_sha256": "fb2dc36a0974ca29c0f95116ff0737f6385e731f96c6b3d370e433e820ed4fd5",
+          "frozen_at": "2026-10-29T03:51:27Z",
+          "gate_result": "FAIL",
+          "gate": {
+            "result": "FAIL",
+            "run_id": "gate-20261029-040012",
+            "results": "docs/RESULTS-v2.md",
+            "reason": "original: false-positive upper bound 9.718% is above 2%",
+            "failed_arm": "original",
+            "false_positive_upper_bound": 0.09718,
+            "false_positive_limit": 0.02,
+            "threshold_sha256": "686e0e6379be42271501c7016e4c16b1cdfef759904818f6382c5f37479eb53c",
+            "gate_file": "secondlook/rungs/classifier_gate.json",
+            "gate_file_sha256": "b2131148b3e0f76c078348bc67c9906710fcadd116010bffc403bfca68c5bf4d"
+          },
+          "raises_concern": false
+        }
+      },
+      {
+        "rung": "watermark",
+        "finding": "Second Look's own watermark was not found: 135 of 256 bits match our message, near the 128 expected by chance.",
+        "proves": "Only that our own mark is not readable in this copy.",
+        "does_not_prove": "The absence of a mark says nothing about how the image was made. This looks only for Second Look's own mark. It does not detect Meta AI images or any other company's watermark.",
+        "strength": "none",
+        "raw": {
+          "present": false,
+          "matched_bits": 135,
+          "bits": 256,
+          "min_match": 175,
+          "p_value_if_unmarked": 0.20827859374661456,
+          "key_id": "2372a8b02093",
+          "demo_key": true,
+          "model": "Meta Video Seal 1.0 (image model y_256b_img, TorchScript)",
+          "weights_sha256": "5c7a4581c36fc6090aafdcfb3999123bae5172a4847f22e2da4e7fd1a39d1e1b",
+          "device": "mps",
+          "seconds": 0.099
+        }
+      }
+    ],
+    "steps": [
+      {
+        "n": 1,
+        "tool": "run_ladder",
+        "arguments": {
+          "path": "08-iptc-ai-label-firefly-mountain-landscape.jpg"
+        },
+        "result": "Ran the file checks: 3 cards. Fixed rules give the answer from these cards.",
+        "ok": true,
+        "by": "model",
+        "seconds": 0.49,
+        "template": "run_ladder",
+        "search_source": null
+      },
+      {
+        "n": 2,
+        "tool": "read_text_in_image",
+        "arguments": {
+          "path": "08-iptc-ai-label-firefly-mountain-landscape.jpg"
+        },
+        "result": "Looked for words printed in the image and read none.",
+        "ok": true,
+        "by": "model",
+        "seconds": 28.01,
+        "template": "read_text_in_image.none",
+        "search_source": null
+      }
+    ],
+    "explanation": "1. Ran the file checks: 3 cards. Fixed rules give the answer from these cards.\n2. Looked for words printed in the image and read none.\nSecond Look found 1 reason to look closer, but on its own it does not show how this was made.\nThe file's IPTC label says AI made this, but anyone can add, change or remove that label.\nA detector scored this 0.02 out of 1, but our cut-off of 0.432 failed its test, so it is no concern.\nSecond Look's own hidden mark is not here (135 of 256 bits match), and that says nothing about how this was made.",
+    "explanation_lines": [
+      {
+        "template": "step.run_ladder",
+        "text": "1. Ran the file checks: 3 cards. Fixed rules give the answer from these cards."
+      },
+      {
+        "template": "step.read_text_in_image.none",
+        "text": "2. Looked for words printed in the image and read none."
+      },
+      {
+        "template": "e1.concerns.one",
+        "text": "Second Look found 1 reason to look closer, but on its own it does not show how this was made."
+      },
+      {
+        "template": "e1.iptc.source.ai",
+        "text": "The file's IPTC label says AI made this, but anyone can add, change or remove that label."
+      },
+      {
+        "template": "e1.classifier.gate_failed",
+        "text": "A detector scored this 0.02 out of 1, but our cut-off of 0.432 failed its test, so it is no concern."
+      },
+      {
+        "template": "e1.watermark.absent",
+        "text": "Second Look's own hidden mark is not here (135 of 256 bits match), and that says nothing about how this was made."
+      }
+    ],
+    "explanation_source": "rules",
+    "explanation_label": "Written by Second Look's rules from fixed templates, not by a model",
+    "image_text": [],
+    "facts": [],
+    "label": "model reading, not evidence",
+    "problems": [],
+    "model": "muse-glimmer",
+    "model_seconds": 31.52,
+    "seconds": 60.02,
+    "version": "15cdea61e3865415a1a3bb46484203910a0cc4fd",
+    "engine": "ladder",
+    "rungs": [
+      "c2pa",
+      "iptc",
+      "exif",
+      "classifier",
+      "watermark",
+      "context"
+    ],
+    "demo": false,
+    "glimmer": "ran"
+  }
+}

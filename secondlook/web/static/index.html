@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Second Look (in development)</title>
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64">
+<link rel="stylesheet" href="/static/app.css">
+<link rel="stylesheet" href="/static/desk.css">
+<link rel="stylesheet" href="/static/investigate.css">
+</head>
+<body>
+<a class="skip" href="#check">Skip to the check</a>
+<main>
+  <header>
+    <h1>Second Look</h1>
+    <span class="badge">In development</span>
+    <a class="nav-link" href="/batch">Check a folder</a>
+  </header>
+  <p class="lede">Drop an image. We read any signed provenance it carries, list each clue with what it
+    proves and what it doesn't, and say "can't tell" when that is the honest answer.</p>
+
+  <div class="stub" id="stub" hidden>Demo mode: stub rungs. These answers are canned examples chosen by file name, not a reading of your image.</div>
+
+  <!-- W11 design pass: once an answer is on screen the inputs fold into this one bar, so the answer comes first. -->
+  <div class="again-bar" id="again-bar" hidden>
+    <p class="again-label" id="again-label"></p>
+    <button type="button" id="again-go">Check another</button>
+  </div>
+
+  <div class="intake" id="intake">
+
+  <section id="check" aria-labelledby="check-title">
+    <h2 id="check-title" class="visually-hidden">Check an image</h2>
+    <input id="file" class="visually-hidden" type="file" accept="image/*" aria-describedby="drop-hint">
+    <label id="drop" for="file">
+      <strong>Drop an image here</strong>
+      <span id="drop-hint">or click to choose one. It is checked on this computer and deleted straight after.</span>
+    </label>
+    <p id="status" role="status" aria-live="polite"></p>
+    <!-- W10 desk, part 2: the caption goes with the image as the optional `caption` field (X1 context rung). -->
+    <div class="caption-field">
+      <label for="caption">Caption or post text, if the image came with one <span class="optional">(optional)</span></label>
+      <textarea id="caption" rows="2" aria-describedby="caption-hint caption-count caption-error"
+                placeholder="For example: Shot on an iPhone 15 Pro in Paris, 2026-10-01"></textarea>
+      <p class="caption-error" id="caption-error" hidden></p>
+      <p class="hint" id="caption-hint">Add it before you drop the image. Second Look compares any date, place or device
+        it states with the file's own facts. It is used for an image you drop or choose; the samples are checked without it.
+        <span id="caption-count">Up to 2,000 characters.</span></p>
+      <button type="button" id="caption-again" hidden>Check the same image again with this caption</button>
+    </div>
+  </section>
+
+  <!-- W10 desk, part 1. Panels start hidden and are shown only when /api/health says their part can run here. -->
+  <p class="caps" id="caps" hidden></p>
+  <p class="more-title" id="more-title" hidden>Or check something else</p>
+  <div class="desk-panels" id="desk-panels">
+    <section class="panel" id="claim-panel" aria-labelledby="claim-title" hidden>
+      <h2 id="claim-title">Check a claim</h2>
+      <form id="claim-form" novalidate>
+        <label for="claim-text">Type or paste one claim you have seen</label>
+        <textarea id="claim-text" rows="3" maxlength="1000" aria-describedby="claim-hint"
+                  placeholder="For example: drinking coffee causes cancer"></textarea>
+        <p class="hint" id="claim-hint">We look it up in an offline copy of published fact-checks and show the
+          publisher's own rating. Nothing is sent anywhere.</p>
+        <button type="submit" id="claim-go">Look it up</button>
+      </form>
+    </section>
+    <section class="panel" id="voice-panel" aria-labelledby="voice-title" hidden>
+      <h2 id="voice-title">Voice note</h2>
+      <input id="voice-file" class="visually-hidden" type="file"
+             accept="audio/*,.m4a,.mp3,.wav,.ogg,.oga,.opus,.aac,.flac,.caf,.aif,.aiff,.amr,.webm"
+             aria-describedby="voice-hint">
+      <label id="voice-drop" for="voice-file">
+        <strong>Choose or drop a voice note</strong>
+        <span id="voice-hint">or click to choose one, up to 10 minutes and 50 MB. It is transcribed on this computer,
+          each claim heard is looked up, and the file is deleted straight after.</span>
+      </label>
+    </section>
+  </div>
+  <p class="caps-off" id="caps-off" hidden></p>
+
+  <section id="samples" aria-labelledby="samples-title" hidden>
+    <h2 id="samples-title">Try a sample</h2>
+    <p class="samples-note">Nine public files we checked by hand: signed camera shots, signed AI images, and copies with the
+      record stripped or an unsigned label added. Each one says what it is; the answer comes from the checks.</p>
+    <ul id="gallery" class="gallery"></ul>
+  </section>
+  </div>
+
+  <!-- Screen-reader line for the answer. It sits outside #intake because the inputs fold away (hidden) once an
+       answer is on screen, and a live region inside a hidden block is never announced. -->
+  <p id="answer-status" class="visually-hidden" role="status" aria-live="polite"></p>
+
+  <p id="desk-status" role="status" aria-live="polite"></p>
+  <section id="desk-result" hidden aria-labelledby="desk-answer">
+    <p class="eyebrow" id="desk-eyebrow"></p>
+    <h2 class="desk-answer" id="desk-answer" tabindex="-1"></h2>
+    <p class="desk-summary" id="desk-summary"></p>
+    <p class="desk-note" id="desk-note"></p>
+    <div id="desk-cards"></div>
+    <p class="desk-credit" id="desk-credit"></p>
+  </section>
+
+  <section id="result" hidden aria-labelledby="answer">
+    <div class="verdict">
+      <img id="preview" alt="">
+      <div class="verdict-text">
+        <p class="eyebrow">The answer</p>
+        <p class="demo-tag" id="demo-tag">Demo answer: stub rungs, not a reading of this image</p>
+        <h2 class="answer" id="answer" tabindex="-1"></h2>
+        <!-- The headline's reason, word for word from the first concern card (concerns only). -->
+        <p class="reason" id="reason" hidden></p>
+        <p class="meaning" id="meaning"></p>
+      </div>
+    </div>
+    <!-- A published fact-check that matched, from the answer's cards or the deep check: the publisher's words. -->
+    <section class="factcheck" id="factcheck" hidden aria-labelledby="fc-title">
+      <!-- DAT-850: when the match comes from a recorded deep check, the recording's own label says so here too,
+           first, so it is the first line in view when the recorded run's click lands on the strip (PR #48 S1). -->
+      <p class="fc-recorded" id="fc-recorded" hidden></p>
+      <h3 id="fc-title" tabindex="-1" aria-describedby="fc-recorded">Published fact-check found</h3>
+      <p class="fc-line" id="fc-line"></p>
+      <!-- The caption words Muse Glimmer searched with, from the recorded run: the model's pick, not the publisher's. -->
+      <p class="fc-pick" id="fc-pick" hidden></p>
+      <p class="fc-limit"><span class="fc-limit-label">Does not prove</span> <span id="fc-limit"></span></p>
+      <p class="fc-more" id="fc-more" hidden></p>
+      <p class="fc-credit" id="fc-credit"></p>
+    </section>
+    <p class="summary" id="summary"></p>
+    <section class="explain" id="explain" hidden aria-labelledby="explain-label">
+      <p class="explain-label" id="explain-label">Plain-language summary (written by Second Look's rules, not by a model)</p>
+      <p class="explain-summary" id="explain-summary"></p>
+    </section>
+    <p class="sample-credit" id="sample-credit" hidden></p>
+    <p class="rungs" id="rungs"></p>
+
+    <!-- One row per clue, with what it proves and what it does not prove side by side. Clues with a signal show;
+         checks that found nothing fold into the details below the list, each still with its limit. -->
+    <section class="ledger" aria-labelledby="g-found">
+      <h3 id="g-found">What we found</h3>
+      <ul class="clues" id="clues"></ul>
+      <details class="quiet" id="quiet" hidden>
+        <summary id="quiet-title"></summary>
+        <ul class="clues" id="quiet-list"></ul>
+      </details>
+    </section>
+    <!-- W11 stage 2: the evidence receipt (R1) of this answer's file, from POST /api/receipt or, for a sample,
+         POST /api/samples/{id}/receipt. The same receipt `secondlook check --receipt` writes. -->
+    <section class="receipt" id="receipt" aria-labelledby="receipt-title">
+      <div class="receipt-row" role="group" aria-labelledby="receipt-title" aria-describedby="receipt-picked receipt-about">
+        <h3 id="receipt-title">Download receipt</h3>
+        <!-- DAT-850: shown only when this file's deep check looked up claim words Muse Glimmer picked from this caption. -->
+        <p class="receipt-picked" id="receipt-picked" hidden></p>
+        <button type="button" id="receipt-pdf" data-format="pdf" hidden>PDF</button>
+        <button type="button" id="receipt-json" data-format="json">JSON</button>
+      </div>
+      <p class="receipt-about" id="receipt-about">A record of this check to keep with a story: the file's sha256, the
+        answer, and every card with what it does not prove. Making it checks the file again. It carries no signature.</p>
+      <!-- Judge persona test, 30 Oct (DAT-850): a PDF and a JSON downloaded one after the other did not match. -->
+      <p class="receipt-about" id="receipt-fresh">Each download is a fresh check with its own <code>created_at</code>
+        time, so two downloads can differ in <code>created_at</code> and in the receipt's sha256.</p>
+      <p id="receipt-status" role="status" aria-live="polite"></p>
+    </section>
+    <p class="meta" id="meta"></p>
+
+    <!-- W10 desk, part 2: the Muse Glimmer investigator (M2, POST /api/investigate). Shows only what M2 returns. -->
+    <section class="investigate" id="investigate" aria-labelledby="inv-title">
+      <h3 id="inv-title">Deep check</h3>
+      <!-- investigate.js sets this line and shows the button from /api/health's capabilities.glimmer, for each answer. -->
+      <p class="inv-local" id="inv-local">Looking for Muse Glimmer on this computer.</p>
+      <p class="inv-about" id="inv-about" hidden>The model picks which of Second Look's checks to run next. It does not set the answer. The
+        lines below come from Second Look's fixed templates, apart from the model's readings, which are labelled as such.</p>
+      <button type="button" id="inv-go" aria-describedby="inv-local" hidden>Investigate with Muse Glimmer (runs locally)</button>
+      <p class="inv-sample" id="inv-sample" hidden>The deep check runs on an image you drop or choose, not on a sample.</p>
+      <!-- DAT-850: with no Glimmer server here, a saved run of these exact bytes (same sha256), labelled as recorded.
+         While it is offered, investigate.js swaps #inv-local for a line that says Glimmer is not running here,
+         when health says so; for any other reason both lines say Second Look could not confirm Glimmer (A228). -->
+      <p class="inv-recorded-offer" id="inv-recorded-offer" hidden>No Muse Glimmer server is running here now, so the
+        deep check cannot run live. We recorded one on this exact file (the same sha256 fingerprint), and you can read it here.</p>
+      <button type="button" id="inv-recorded-go" hidden>Show the recorded run (not live)</button>
+      <p class="inv-time" id="inv-time" role="timer" hidden></p>
+      <p id="inv-status" role="status" aria-live="polite"></p>
+      <div class="inv-setup" id="inv-setup" hidden>
+        <p id="inv-setup-why"></p>
+        <p>To set it up on this computer (Meta's pinned files, about 18 GB; the fetch needs 40 GB free), run from the
+          project folder:</p>
+        <pre><code>scripts/fetch_glimmer.sh
+scripts/glimmer_server.sh start</code></pre>
+        <p id="inv-setup-ladder" hidden>Then start this page on the file checks, not the demo stub:
+          <code>python -m secondlook.web</code></p>
+      </div>
+      <div class="inv-note" id="inv-note" hidden>
+        <p class="inv-recorded-label" id="inv-recorded-label" tabindex="-1" hidden></p>
+        <p class="inv-recorded-caption" id="inv-recorded-caption" hidden></p>
+        <p class="eyebrow" id="inv-eyebrow">Desk note</p>
+        <p class="inv-answer" id="inv-answer" tabindex="-1"></p>
+        <p class="explain-label" id="inv-explain-label"></p>
+        <ul class="inv-lines" id="inv-lines"></ul>
+        <h4 id="inv-steps-title">Checks Muse Glimmer called</h4>
+        <ol class="inv-steps" id="inv-steps"></ol>
+        <div id="inv-reading" hidden>
+          <h4 id="inv-reading-title"></h4>
+          <ul class="inv-reading" id="inv-reading-list"></ul>
+        </div>
+        <div id="inv-cards-wrap" hidden>
+          <h4>Cards from the deep check</h4>
+          <div id="inv-cards"></div>
+        </div>
+        <details class="quiet" id="inv-rerun" hidden>
+          <summary id="inv-rerun-title"></summary>
+          <div id="inv-rerun-list"></div>
+        </details>
+        <p class="inv-meta" id="inv-meta"></p>
+      </div>
+    </section>
+  </section>
+</main>
+<footer>
+  Second Look is a What Survives in AI project, in development. It reads provenance and flags concerns with
+  reasons; it does not decide what is true. Not affiliated with Meta.
+</footer>
+
+<script src="/static/app.js"></script>
+<script src="/static/desk.js"></script>
+<script src="/static/investigate.js"></script>
+</body>
+</html>

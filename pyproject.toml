@@ -1,0 +1,30 @@
+[project]
+name = "secondlook"
+version = "0.1.0"
+description = "Second Look (in development): an evidence ladder for images. Answers signed_ai, signed_camera, concerns or cant_tell. Never says 'this is real'."
+requires-python = ">=3.12"
+license = { text = "MIT" }
+dependencies = []
+
+[project.optional-dependencies]
+provenance = ["c2pa-python>=0.38", "Pillow>=11"]
+receipt = ["reportlab==5.1.0"]
+web = ["fastapi==0.162.0", "uvicorn==0.54.0", "python-multipart==0.0.32", "reportlab==5.1.0"]
+classifier = ["torch>=2.11", "torchvision>=0.26", "timm>=1.0.15", "safetensors>=0.4", "Pillow>=11"]
+gate = ["scikit-learn>=1.5", "Pillow>=11"]
+watermark = ["torch>=2.3", "torchvision>=0.18", "Pillow>=11"]
+test = ["pytest>=8", "httpx==0.28.1", "pypdf==6.21.3"]
+
+[project.scripts]
+secondlook = "secondlook.cli:main"
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["secondlook*"]
+
+[tool.setuptools.package-data]
+secondlook = ["trust/*.pem", "trust/*.cfg", "trust/*.md", "fonts/*.woff2", "queue_bands.json", "queue_bands.json.sha256"]
+"secondlook.web" = ["static/*", "static/fonts/*"]

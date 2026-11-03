@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Check a folder · Second Look (in development)</title>
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64">
+<link rel="stylesheet" href="/static/app.css">
+<link rel="stylesheet" href="/static/batch.css">
+</head>
+<body>
+<a class="skip" href="#batch">Skip to the folder check</a>
+<main class="wide">
+  <header>
+    <h1>Second Look</h1>
+    <span class="badge">In development</span>
+    <a class="nav-link" href="/">Check one file</a>
+  </header>
+  <p class="lede">Drop a folder or several images. Each file is checked on its own, on this computer, and deleted
+    straight after. You get one answer and one receipt per file.</p>
+
+  <div class="stub" id="stub" hidden>Demo mode: stub rungs. These answers are canned examples chosen by file name, not a reading of your images.</div>
+
+  <section id="batch" aria-labelledby="batch-title">
+    <h2 id="batch-title" class="visually-hidden">Check a folder</h2>
+    <input id="files" class="visually-hidden" type="file" accept="image/*" multiple aria-describedby="bdrop-hint">
+    <label id="bdrop" for="files">
+      <strong>Drop a folder or images here</strong>
+      <span id="bdrop-hint">or click to choose them. Any number of images, up to 25 MB each.</span>
+    </label>
+    <p class="pick-folder"><button type="button" id="folder-go">Choose a folder</button>
+      <input id="folder" class="visually-hidden" type="file" webkitdirectory multiple tabindex="-1" aria-hidden="true"></p>
+  </section>
+
+  <section id="batch-result" aria-labelledby="batch-result-title" hidden>
+    <div class="batch-head">
+      <h2 id="batch-result-title" tabindex="-1">Answers, one per file</h2>
+      <div class="batch-actions">
+        <button type="button" id="zip-go" disabled>Download all receipts (.zip)</button>
+        <button type="button" id="batch-again">Check another folder</button>
+      </div>
+    </div>
+    <p class="zip-note">Each receipt records the file's name, size and sha256, the versions that checked it, the
+      answer, and every clue with what it does not prove.</p>
+    <p class="batch-progress" id="batch-progress"></p>
+    <p class="sets-note" id="sets-note" hidden>Files are sent in sets of up to 20 files and 100 MB, so near-duplicate
+      copies are grouped only within each set.</p>
+    <ol class="rows" id="rows"></ol>
+    <div class="dups" id="dups" hidden>
+      <h3>Near-duplicate copies</h3>
+      <ul id="dup-list"></ul>
+      <p class="dup-note" id="dup-note"></p>
+    </div>
+    <p class="meta" id="batch-meta"></p>
+  </section>
+
+  <p id="batch-status" class="visually-hidden" role="status" aria-live="polite"></p>
+</main>
+<footer class="wide">
+  Second Look is a What Survives in AI project, in development. It reads provenance and flags concerns with
+  reasons; it does not decide what is true. Not affiliated with Meta.
+</footer>
+
+<script src="/static/batch-zip.js"></script>
+<script src="/static/batch.js"></script>
+</body>
+</html>

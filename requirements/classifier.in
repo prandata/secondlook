@@ -1,0 +1,7 @@
+# The classifier rung (S3, Community Forensics). Installed only when
+# secondlook/rungs/classifier.py is in the tree. Compile with: make lock
+torch>=2.11
+torchvision>=0.26
+timm>=1.0.15
+safetensors>=0.4
+pillow==13.0.0

@@ -1,0 +1,58 @@
+{
+  "fitted_on": {
+    "code_commit": "b5953956ffa2d047c16715334b90d851e2d76454",
+    "dataset": "TrueFake (Dell'Anna et al., IJCNN 2025, arXiv 2504.20658), Facebook-shared subset",
+    "detector": "Community Forensics ViT-S/16 384 (classifier rung), score as the rung reports it (6 dp)",
+    "licence": "CC BY 4.0",
+    "prereg_file": "PREREG.md",
+    "prereg_sha256": "2561574b8219dcdb2b6196d19d7b822a66a4b36919d131549eb424f942e04dc5",
+    "rows": {
+      "dev_rows_in_split": 343,
+      "dev_rows_scored": 343,
+      "held_out_rows_ignored": 640
+    },
+    "scores_file": "scores.csv",
+    "scores_sha256": "b313f58e083837be9ff96059bf538d65558e2039dbc41a58e3b3929cec4b531a",
+    "split": "dev (35% of groups by sha256(SEED:group), PREREG section 2); held-out rows not read",
+    "split_file": "split.csv",
+    "split_sha256": "16739fc7b4bdf8f9ea4eac84af29d04cfbdf9102d6730cacfbd8a0f00665ca1e"
+  },
+  "forms": {
+    "original": {
+      "dev": {
+        "ai": 174,
+        "ai_auto_decided": 99,
+        "ai_likely_fine": 1,
+        "ai_uncertain": 74,
+        "real": 169,
+        "real_auto_decided": 1,
+        "real_likely_fine": 49,
+        "real_uncertain": 119
+      },
+      "dev_ai_clear_rate": 0.005747126436781609,
+      "dev_real_flag_rate": 0.005917159763313609,
+      "t_hi": 0.970606,
+      "t_lo": 0.000367
+    },
+    "sq512": {
+      "dev": {
+        "ai": 174,
+        "ai_auto_decided": 117,
+        "ai_likely_fine": 1,
+        "ai_uncertain": 56,
+        "real": 169,
+        "real_auto_decided": 1,
+        "real_likely_fine": 49,
+        "real_uncertain": 119
+      },
+      "dev_ai_clear_rate": 0.005747126436781609,
+      "dev_real_flag_rate": 0.005917159763313609,
+      "t_hi": 0.860209,
+      "t_lo": 0.000235
+    }
+  },
+  "gate_note": "The 29 Oct classifier gate (classifier_gate.json) stays FAIL and is not retuned. These thresholds only route images in the desk queue; they never raise a ladder concern.",
+  "max_error": 0.01,
+  "rule": "Rule BAND, arena/PREREG.md section 5 (DAT-1366 J3): auto_decided when f = 1 or d >= t_hi (t_hi by rule OP, at most floor(0.01 x dev reals) dev reals flagged, ties to the highest); likely_fine when f = 0 and d < t_lo (t_lo the largest dev score with at most floor(0.01 x dev AI) dev AI images below it); everything else to a person.",
+  "schema": "second-look-queue-bands/1"
+}

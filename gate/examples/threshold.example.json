@@ -1,0 +1,23 @@
+{
+  "schema": "second-look-threshold/2",
+  "threshold": 0.5,
+  "ai_if": "score>=threshold",
+  "abstain": {
+    "rule": "score_band",
+    "low": 0.4,
+    "high": 0.6,
+    "real_abstain_counts_as": "not_flagged"
+  },
+  "classifier": {
+    "name": "EXAMPLE ONLY: set to the classifier under test",
+    "version": "EXAMPLE ONLY",
+    "weights_sha256": "EXAMPLE ONLY"
+  },
+  "dev_split_sha256": "sha256 of splits/dev.csv, from SPLIT.json",
+  "test_split_sha256": "sha256 of splits/test.csv, from SPLIT.json",
+  "phash_distance": 8,
+  "gate_arms": ["original"],
+  "frozen_at": "2026-10-29T12:00:00Z",
+  "frozen_by": "EXAMPLE ONLY: the agent id or person who froze it",
+  "notes": "Pick the threshold and abstain band on dev.csv only, set frozen_at, commit this file, then run the classifier on test.csv. Use {\"rule\": \"none\"} for abstain if the classifier never abstains."
+}

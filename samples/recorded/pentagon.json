@@ -1,0 +1,299 @@
+{
+  "schema": "second-look-recorded-run/1",
+  "sample": {
+    "id": "pentagon",
+    "file": "pentagon-mock-post.png",
+    "sha256": "e4d682306efb2e33f33c4e0f9f6c306db535ac9b874488997cdfa215c8207412",
+    "licence": "Our own: a mock post we made, with our own wording",
+    "credit": "Mock post made by us with Pillow (scripts/render_pentagon_mock.py); the caption is the M1 test's own wording"
+  },
+  "caption": "BREAKING: Explosion near the Pentagon, it is under attack!! Photo shows the U.S. Pentagon is under attack. Stay safe everyone",
+  "caption_sha256": "563c465e647d3df5a44981fc8cca36a0f0356a21355e45000b158d025a88c980",
+  "model": {
+    "name": "Muse Glimmer 30B",
+    "served_as": "muse-glimmer",
+    "file": "Muse-Glimmer-30B-KQuant-17GB-Q4_K_M.gguf",
+    "sha256": "4cc57c0f51040a226e5a72cc47b7613f7772950e460a665f7083de89f183f60e",
+    "projector_file": "mmproj-Muse-Glimmer-30B-Q4_K_M.gguf",
+    "projector_sha256": "f48b452316f9b213758e8659444029b961a24a07f99a1abb2a9f88b06f7c00c6"
+  },
+  "llama_cpp_build": "b11669-620d2225c",
+  "git_commit": "c5ad1960c538a45ac9e8772a000223ebf69ff5a7",
+  "machine": "Apple M5 Max (128 GB)",
+  "os": "macOS-26.6.2-arm64-arm-64bit",
+  "date_utc": "2026-10-29T22:35:45Z",
+  "seconds": 178.1,
+  "seconds_cover": "the whole deep check, the file checks included; their weights were loaded before timing, as the page loads them before it says Ready",
+  "note": {
+    "file": "pentagon-mock-post.png",
+    "answer": "cant_tell",
+    "summary": "We can't tell how this image was made. No signed record and no concern was found, and that is not evidence either way.",
+    "evidence": [
+      {
+        "rung": "classifier",
+        "finding": "Community Forensics detector score 0.001 out of 1. This score raises no concern on its own.",
+        "proves": "Only that this detector did not raise a concern, and its threshold has not passed its test.",
+        "does_not_prove": "A low score is not proof that a camera took it. Many AI images score low, especially after compression or from generators the model never saw.",
+        "strength": "none",
+        "raw": {
+          "score": 0.001478,
+          "model": "Community Forensics ViT-S/16 384 (OwensLab/commfor-model-384)",
+          "model_repo": "OwensLab/commfor-model-384",
+          "model_revision": "6076002bf0d9dd37537f965ee2f06f826c333b61",
+          "weights_sha256": "b89f36275f3bf5e2b040eee36597a8f19db051bff9a473a9cf7b2466284fb387",
+          "device": "mps",
+          "seconds": 0.5462,
+          "threshold": 0.4319957792758942,
+          "above_threshold": false,
+          "threshold_file": "secondlook/rungs/classifier_threshold.json",
+          "threshold_file_sha256": "686e0e6379be42271501c7016e4c16b1cdfef759904818f6382c5f37479eb53c",
+          "dev_split_sha256": "fb2dc36a0974ca29c0f95116ff0737f6385e731f96c6b3d370e433e820ed4fd5",
+          "frozen_at": "2026-10-29T03:51:27Z",
+          "gate_result": "FAIL",
+          "gate": {
+            "result": "FAIL",
+            "run_id": "gate-20261029-040012",
+            "results": "docs/RESULTS-v2.md",
+            "reason": "original: false-positive upper bound 9.718% is above 2%",
+            "failed_arm": "original",
+            "false_positive_upper_bound": 0.09718,
+            "false_positive_limit": 0.02,
+            "threshold_sha256": "686e0e6379be42271501c7016e4c16b1cdfef759904818f6382c5f37479eb53c",
+            "gate_file": "secondlook/rungs/classifier_gate.json",
+            "gate_file_sha256": "b2131148b3e0f76c078348bc67c9906710fcadd116010bffc403bfca68c5bf4d"
+          },
+          "raises_concern": false
+        }
+      },
+      {
+        "rung": "watermark",
+        "finding": "Second Look's own watermark was not found: 139 of 256 bits match our message, near the 128 expected by chance.",
+        "proves": "Only that our own mark is not readable in this copy.",
+        "does_not_prove": "The absence of a mark says nothing about how the image was made. This looks only for Second Look's own mark. It does not detect Meta AI images or any other company's watermark.",
+        "strength": "none",
+        "raw": {
+          "present": false,
+          "matched_bits": 139,
+          "bits": 256,
+          "min_match": 175,
+          "p_value_if_unmarked": 0.09462391646052754,
+          "key_id": "2372a8b02093",
+          "demo_key": true,
+          "model": "Meta Video Seal 1.0 (image model y_256b_img, TorchScript)",
+          "weights_sha256": "5c7a4581c36fc6090aafdcfb3999123bae5172a4847f22e2da4e7fd1a39d1e1b",
+          "device": "mps",
+          "seconds": 4.4105
+        }
+      },
+      {
+        "rung": "origin",
+        "finding": "Checked: c2pa, iptc, exif, classifier, watermark. None found a signed provenance record, an AI label in the metadata, or a classifier score that raises a concern.",
+        "proves": "Only that the checks listed here found nothing on this file.",
+        "does_not_prove": "Not finding anything does not show how the image was made: metadata is easily stripped, and the classifier is not reliable on every image. It is not evidence either way.",
+        "strength": "none",
+        "raw": {
+          "limit": true,
+          "_ladder_limit": true,
+          "rungs_run": [
+            "c2pa",
+            "iptc",
+            "exif",
+            "classifier",
+            "watermark"
+          ],
+          "rungs_failed": [],
+          "file_readable": true
+        }
+      },
+      {
+        "rung": "claim",
+        "finding": "politifact.com reviewed the claim “Photo shows the U.S. Pentagon “is under attack.”” and rated it “Pants on Fire” (publication date not given in the feed): https://www.politifact.com/factchecks/2023/may/25/facebook-posts/fake-photo-used-in-claim-that-the-pentagon-was-att/ The feed lists the author as “PolitiFact”. Search words came from a model reading of your caption; check them.",
+        "proves": "That politifact.com, a fact-checker on the IFCN list, published this rating on a claim that shares 4 of the 4 key words in the picked words and is 4 key words long itself. It is not necessarily the claim you are checking.",
+        "does_not_prove": "That the words searched for are the claim they reviewed, or that the rating still holds. Second Look gives no true or false verdict of its own.",
+        "strength": "none",
+        "raw": {
+          "claim_reviewed": "Photo shows the U.S. Pentagon “is under attack.”",
+          "rating": "Pants on Fire",
+          "publisher": "politifact.com",
+          "publisher_url": "https://www.politifact.com/",
+          "is_listed_fact_checker": true,
+          "listed_as": "PolitiFact",
+          "review_url": "https://www.politifact.com/factchecks/2023/may/25/facebook-posts/fake-photo-used-in-claim-that-the-pentagon-was-att/",
+          "date_published": null,
+          "claimed_by": "Facebook posts",
+          "claim_date": "2023-05-23",
+          "negation_differs": false,
+          "similarity": 1.0,
+          "shared_terms": 4,
+          "typed_terms": 4,
+          "reviewed_terms": 4,
+          "raw": {
+            "rating_value": null,
+            "best_rating": null,
+            "worst_rating": null
+          },
+          "feed": {
+            "source": "https://storage.googleapis.com/datacommons-feeds/claimreview/20261029-141029/data.json",
+            "licence": "CC BY (compilation), https://datacommons.org/factcheck/download; each review remains the fact-checker's own work",
+            "feed_name": "",
+            "feed_date_modified": "2026-10-29T14:10:29.597133168+00:00",
+            "downloaded_at": "2026-10-29T14:14:26Z",
+            "feed_sha256": "3c1470845f2f4adc4254bb3cc2b73349aec6b0cc6de7bc5ab15ecc71712b6024",
+            "rows": "99385"
+          },
+          "search_source": "model",
+          "search_from": "caption"
+        }
+      }
+    ],
+    "steps": [
+      {
+        "n": 1,
+        "tool": "run_ladder",
+        "arguments": {
+          "path": "pentagon-mock-post.png"
+        },
+        "result": "Ran the file checks: 3 cards. Fixed rules give the answer from these cards.",
+        "ok": true,
+        "by": "model",
+        "seconds": 5.04,
+        "template": "run_ladder",
+        "search_source": null
+      },
+      {
+        "n": 2,
+        "tool": "read_text_in_image",
+        "arguments": {
+          "path": "pentagon-mock-post.png"
+        },
+        "result": "Read the words printed in the image: 5 lines, shown as a model reading.",
+        "ok": true,
+        "by": "model",
+        "seconds": 21.98,
+        "template": "read_text_in_image.lines",
+        "search_source": null
+      },
+      {
+        "n": 3,
+        "tool": "lookup_claim",
+        "arguments": {
+          "text": "BREAKING: Explosion near the Pentagon, it is under attack",
+          "from": "caption"
+        },
+        "result": "Searched published fact-checks with words from the caption and found none close.",
+        "ok": true,
+        "by": "model",
+        "seconds": 2.04,
+        "template": "lookup_claim.none",
+        "search_source": "model"
+      },
+      {
+        "n": 4,
+        "tool": "lookup_claim",
+        "arguments": {
+          "text": "Photo shows the U.S. Pentagon is under attack",
+          "from": "caption"
+        },
+        "result": "Searched published fact-checks with words from the caption: 1 published fact-check.",
+        "ok": true,
+        "by": "model",
+        "seconds": 4.79,
+        "template": "lookup_claim.found",
+        "search_source": "model"
+      },
+      {
+        "n": 5,
+        "tool": "extract_claim_facts",
+        "arguments": {
+          "text": "BREAKING: Explosion near the Pentagon, it is under attack; Photo shows the U.S. Pentagon is under attack; Stay safe everyone"
+        },
+        "result": "Looked for a date, place or device in the caption and kept none.",
+        "ok": true,
+        "by": "model",
+        "seconds": 23.43,
+        "template": "extract_claim_facts.none",
+        "search_source": null
+      }
+    ],
+    "explanation": "1. Ran the file checks: 3 cards. Fixed rules give the answer from these cards.\n2. Read the words printed in the image: 5 lines, shown as a model reading.\n3. Searched published fact-checks with words from the caption and found none close.\n4. Searched published fact-checks with words from the caption: 1 published fact-check.\n5. Looked for a date, place or device in the caption and kept none.\nSecond Look can't tell how this was made, and finding nothing is not evidence either way.\nA detector scored this under 0.01 out of 1, but our cut-off of 0.432 failed its test, so it is no concern.\nSecond Look's own hidden mark is not here (139 of 256 bits match), and that says nothing about how this was made.\nSecond Look ran 5 checks (C2PA, IPTC, EXIF, detector and watermark) and none raised a concern, but finding nothing is not evidence.\nA rating published by politifact.com, on the IFCN list, is on a claim with 4 of 4 words a model took from your caption, so check them.",
+    "explanation_lines": [
+      {
+        "template": "step.run_ladder",
+        "text": "1. Ran the file checks: 3 cards. Fixed rules give the answer from these cards."
+      },
+      {
+        "template": "step.read_text_in_image.lines",
+        "text": "2. Read the words printed in the image: 5 lines, shown as a model reading."
+      },
+      {
+        "template": "step.lookup_claim.none",
+        "text": "3. Searched published fact-checks with words from the caption and found none close."
+      },
+      {
+        "template": "step.lookup_claim.found",
+        "text": "4. Searched published fact-checks with words from the caption: 1 published fact-check."
+      },
+      {
+        "template": "step.extract_claim_facts.none",
+        "text": "5. Looked for a date, place or device in the caption and kept none."
+      },
+      {
+        "template": "e1.cant_tell",
+        "text": "Second Look can't tell how this was made, and finding nothing is not evidence either way."
+      },
+      {
+        "template": "e1.classifier.gate_failed",
+        "text": "A detector scored this under 0.01 out of 1, but our cut-off of 0.432 failed its test, so it is no concern."
+      },
+      {
+        "template": "e1.watermark.absent",
+        "text": "Second Look's own hidden mark is not here (139 of 256 bits match), and that says nothing about how this was made."
+      },
+      {
+        "template": "e1.limit.nothing",
+        "text": "Second Look ran 5 checks (C2PA, IPTC, EXIF, detector and watermark) and none raised a concern, but finding nothing is not evidence."
+      },
+      {
+        "template": "e1.claim.match.listed.model",
+        "text": "A rating published by politifact.com, on the IFCN list, is on a claim with 4 of 4 words a model took from your caption, so check them."
+      }
+    ],
+    "explanation_source": "rules",
+    "explanation_label": "Written by Second Look's rules from fixed templates, not by a model",
+    "image_text": [
+      "Mock post made by us",
+      "BREAKING: Explosion near the",
+      "Pentagon, it is under attack!!",
+      "Photo shows the U.S. Pentagon is",
+      "under attack. Stay safe everyone"
+    ],
+    "facts": [],
+    "label": "model reading, not evidence",
+    "problems": [],
+    "model": "muse-glimmer",
+    "model_seconds": 120.62,
+    "seconds": 178.1,
+    "version": "c5ad1960c538a45ac9e8772a000223ebf69ff5a7",
+    "engine": "ladder",
+    "rungs": [
+      "c2pa",
+      "iptc",
+      "exif",
+      "classifier",
+      "watermark",
+      "context"
+    ],
+    "demo": false,
+    "glimmer": "ran",
+    "receipt_run": null
+  },
+  "claims_index": {
+    "file_sha256": "d8a20a9180850a9a8d885d8757d1c5013b7b5b08794567f22f0daf54b3987e0a",
+    "source": "https://storage.googleapis.com/datacommons-feeds/claimreview/20261029-141029/data.json",
+    "licence": "CC BY (compilation), https://datacommons.org/factcheck/download; each review remains the fact-checker's own work",
+    "feed_date_modified": "2026-10-29T14:10:29.597133168+00:00",
+    "downloaded_at": "2026-10-29T14:14:26Z",
+    "feed_sha256": "3c1470845f2f4adc4254bb3cc2b73349aec6b0cc6de7bc5ab15ecc71712b6024",
+    "rows": "99385"
+  }
+}

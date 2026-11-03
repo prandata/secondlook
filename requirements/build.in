@@ -1,0 +1,3 @@
+# The build backend for `pip install -e .`, pinned so setup never fetches it unhashed.
+# Same version as the setuptools in classifier.lock. Compile with: make lock
+setuptools==84.2.1

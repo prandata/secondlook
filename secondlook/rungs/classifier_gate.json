@@ -1,0 +1,14 @@
+{
+  "schema": "second-look-gate-status/1",
+  "result": "FAIL",
+  "run_id": "gate-20261029-040012",
+  "threshold_sha256": "686e0e6379be42271501c7016e4c16b1cdfef759904818f6382c5f37479eb53c",
+  "results": "docs/RESULTS-v2.md",
+  "run_record": "docs/gate-runs/v2-gate-run.json",
+  "reason": "original: false-positive upper bound 9.718% is above 2%",
+  "failed_arm": "original",
+  "false_positive_upper_bound": 0.09718,
+  "false_positive_limit": 0.02,
+  "recorded_by": "wsai-opus",
+  "ruling": "wsai-lead, DAT-850, 29 Oct 2026: the gate gates the product; a threshold that failed its pre-registered test leaves the classifier score-only"
+}

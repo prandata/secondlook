@@ -1,0 +1,50 @@
+{
+  "accepted_files": [
+    {
+      "complete": true,
+      "name": "ACCEPTED-v2-D3.json",
+      "schema": "second-look-l4-accepted/1",
+      "sha256": "07d2fc22535d7456c489eabb07b7a6d3bda028aeef1ec7150ee651f5a7860482",
+      "splits": [
+        "dev",
+        "test"
+      ]
+    }
+  ],
+  "accepted_sha256": "07d2fc22535d7456c489eabb07b7a6d3bda028aeef1ec7150ee651f5a7860482",
+  "derive_env": {
+    "libjpeg": "6.2",
+    "pillow": "13.0.0",
+    "python": "3.12.13",
+    "zlib": "1.3.1.zlib-ng"
+  },
+  "derive_py_sha256": "53d6ad997d914b93cb617c45eeb9b2b79786a9af737064482e99872f220bf6b1",
+  "file_base": "<runs>/L4-test-set",
+  "finished_at": "2026-10-29T04:07:03Z",
+  "harness_exit_code": 1,
+  "l4_lock_sha256": "04ebb07c1d7e7704d6577ffa83379778429df61fa701bfccf5075d2900ae4e93",
+  "predictions_sha256": "6715638ebdec5b2e997bd3de75a30f05da796fba65cfe399b8b97ad93351f7da",
+  "run_id": "gate-20261029-040012",
+  "screen_config_sha256": "4e8f7c9af51912614f09f4b4a670894ac1817077151692985cb2d788bec08afa",
+  "secondlook_commit": "c59f0644890aed1216257066c07fcc9c45e7b4f3",
+  "split_json_sha256": "c6d485ec688583a23dd124c2a6488bc1facc5ed150b75b2f9b988de50b536403",
+  "started_at": "2026-10-29T04:00:12Z",
+  "synthetic": false,
+  "threshold_commit": {
+    "commit": "e4c8879349ed628d113a83ed45330f300fdb02c8",
+    "committed_at": "2026-10-29T03:51:39Z",
+    "path": "secondlook/rungs/classifier_threshold.json"
+  },
+  "threshold_sha256": "686e0e6379be42271501c7016e4c16b1cdfef759904818f6382c5f37479eb53c",
+  "v2_lock_context": [
+    {
+      "file": "ACCEPTED-v1-final-D3.json",
+      "sha256": "615ec37e97253bf42395b2a6732e2c6b26c98cf838c21ac3221193164186e499"
+    }
+  ],
+  "v2_lock_gate_view": {
+    "groups-real.csv": "f3eecf56fc30283f83fd4a6bac46701ebb929e9fc4229ef8a9d912452a54e594",
+    "manifest-real.csv": "58700adf12dd69bdbcac22aab89c202ad832f77f8e04cb6ad17ba197ef354c36"
+  },
+  "v2_lock_sha256": "432cc97c6752275dd81edeac20fa63dd119cbf58701e88f48e61bbabb54dca2b"
+}

@@ -1,0 +1,44 @@
+{
+  "answer": "cant_tell",
+  "created_at": "2026-10-30T00:00:00Z",
+  "demo": false,
+  "evidence": [
+    {
+      "does_not_prove": "Not finding anything does not show how the image was made: metadata is easily stripped, and the classifier is not reliable on every image. It is not evidence either way.",
+      "finding": "Checked: exif. None found a signed provenance record, an AI label in the metadata, or a classifier score that raises a concern.",
+      "index": 1,
+      "proves": "Only that the checks listed here found nothing on this file.",
+      "raw": {
+        "_ladder_limit": true,
+        "file_readable": true,
+        "limit": true,
+        "rungs_failed": [],
+        "rungs_run": [
+          "exif"
+        ]
+      },
+      "raw_dropped": [],
+      "rung": "origin",
+      "strength": "none"
+    }
+  ],
+  "file": {
+    "name": "plain.jpg",
+    "sha256": "2208a405febd4615907fb1e57f6cd098a32da7582f419b356bc1e81528e33884",
+    "size_bytes": 674
+  },
+  "inputs": {},
+  "limits": "Second Look never says an image is real, genuine or authentic, or safe to trust. signed_camera means a signer's record says a camera captured it. cant_tell means we found nothing either way. A signed record does not prove that what the picture shows is true. A concern is a reason to look closer, not a verdict. Second Look is not a fact-checker and is not affiliated with Meta.",
+  "schema": "second-look-receipt/1",
+  "summary": "Second Look can't tell how this was made, and finding nothing is not evidence either way.",
+  "tool": {
+    "name": "secondlook",
+    "version": "fixed"
+  },
+  "versions": {
+    "libraries": {},
+    "package": "fixed",
+    "python": "fixed",
+    "python_implementation": "fixed"
+  }
+}

@@ -1,0 +1,232 @@
+{
+  "schema": "second-look-recorded-run/1",
+  "sample": {
+    "id": "04",
+    "file": "04-ai-firefly-typography-logo.jpg",
+    "sha256": "5550fa2572d435234d6a750ce93b21a711cccd9c650dd1cdd6d400fb1351b3b6",
+    "licence": "Public domain",
+    "credit": "Adobe Firefly Image 3, prompted by Jiří Vedral, via Wikimedia Commons"
+  },
+  "caption": null,
+  "model": {
+    "name": "Muse Glimmer 30B",
+    "served_as": "muse-glimmer",
+    "file": "Muse-Glimmer-30B-KQuant-17GB-Q4_K_M.gguf",
+    "sha256": "4cc57c0f51040a226e5a72cc47b7613f7772950e460a665f7083de89f183f60e",
+    "projector_file": "mmproj-Muse-Glimmer-30B-Q4_K_M.gguf",
+    "projector_sha256": "f48b452316f9b213758e8659444029b961a24a07f99a1abb2a9f88b06f7c00c6"
+  },
+  "llama_cpp_build": "b11669-620d2225c",
+  "git_commit": "15cdea61e3865415a1a3bb46484203910a0cc4fd",
+  "machine": "Apple M5 Max (128 GB)",
+  "os": "macOS-26.6.2-arm64-arm-64bit",
+  "date_utc": "2026-10-29T15:03:41Z",
+  "seconds": 88.8,
+  "seconds_cover": "the whole deep check, the file checks included; their weights were loaded before timing, as the page loads them before it says Ready",
+  "note": {
+    "file": "04-ai-firefly-typography-logo.jpg",
+    "answer": "signed_ai",
+    "summary": "A valid Content Credentials manifest says AI was used to make or edit this image. That tells you how it was made, not whether any claim about it is true.",
+    "evidence": [
+      {
+        "rung": "c2pa",
+        "finding": "C2PA manifest signed by Adobe Inc. on 2024-06-14 via Adobe_Firefly adobe_c2pa/0.10.1 c2pa-rs/0.31.1; it declares it was made with generative AI (trainedAlgorithmicMedia). The signer is on the C2PA interim trust list, which C2PA describes as temporary.",
+        "proves": "The signer recorded that this content came from an AI generator. The signer chains to that list and the file has not changed since it was signed.",
+        "does_not_prove": "Who made it or why; only that the signing tool labelled it AI-made.",
+        "strength": "signed",
+        "raw": {
+          "sdk": "c2pa-python 0.91.6",
+          "validation_state": "Trusted",
+          "valid": true,
+          "trusted": true,
+          "trusted_by": "interim",
+          "trust_list": {
+            "name": "C2PA interim trust list",
+            "source": "https://contentcredentials.org/trust/",
+            "date": "2026-10-28",
+            "files": {
+              "anchors.pem": "db57e50b9bd4e4c786cbb91f38fd85e2af6a9d5412438a8cddcc42688df07ae5",
+              "allowed.sha256.txt": "3597b20c9c20a0daadc7fab0d8c63534bd333ec6a715ef7117c7a4588caa15bb"
+            },
+            "id": "interim",
+            "loaded": true
+          },
+          "trust_lists": [
+            {
+              "name": "C2PA Trust List",
+              "source": "https://raw.githubusercontent.com/c2pa-org/conformance-public/47009eedfe6721edd0ce3e69b89c1101cd6f03e5/trust-list/C2PA-TRUST-LIST.pem",
+              "date": "2026-10-17",
+              "sha256": "b3949271a07b007e92ef1d18050b55388f5e0d2686a16fd864176c48421af8ae",
+              "id": "official",
+              "loaded": true
+            },
+            {
+              "name": "C2PA interim trust list",
+              "source": "https://contentcredentials.org/trust/",
+              "date": "2026-10-28",
+              "files": {
+                "anchors.pem": "db57e50b9bd4e4c786cbb91f38fd85e2af6a9d5412438a8cddcc42688df07ae5",
+                "allowed.sha256.txt": "3597b20c9c20a0daadc7fab0d8c63534bd333ec6a715ef7117c7a4588caa15bb"
+              },
+              "id": "interim",
+              "loaded": true
+            }
+          ],
+          "failures": [],
+          "status_codes": [],
+          "signer_issuer": "Adobe Inc.",
+          "signer_common_name": "firefly-prod",
+          "sign_time": "2024-06-14T23:40:20+00:00",
+          "claim_generator": "Adobe_Firefly adobe_c2pa/0.10.1 c2pa-rs/0.31.1",
+          "digital_source_types": [
+            "trainedAlgorithmicMedia"
+          ],
+          "source_class": "ai",
+          "ai_ingredient": false,
+          "ai_tool_name": "adobe_firefly",
+          "ai_label": false,
+          "actions": [
+            "c2pa.created"
+          ],
+          "ingredient_count": 0,
+          "embedded": true
+        }
+      },
+      {
+        "rung": "classifier",
+        "finding": "Community Forensics detector score 0.159 out of 1. This score raises no concern on its own.",
+        "proves": "Nothing on its own. A threshold of 0.432 was frozen in advance, and our test of it failed. In that test, the upper bound on false flags for photos in their original format was 9.7%, above the 2% limit. See docs/RESULTS-v2.md.",
+        "does_not_prove": "A low score is not proof that a camera took it. Many AI images score low, especially after compression or from generators the model never saw.",
+        "strength": "none",
+        "raw": {
+          "score": 0.158938,
+          "model": "Community Forensics ViT-S/16 384 (OwensLab/commfor-model-384)",
+          "model_repo": "OwensLab/commfor-model-384",
+          "model_revision": "6076002bf0d9dd37537f965ee2f06f826c333b61",
+          "weights_sha256": "b89f36275f3bf5e2b040eee36597a8f19db051bff9a473a9cf7b2466284fb387",
+          "device": "mps",
+          "seconds": 0.2777,
+          "threshold": 0.4319957792758942,
+          "above_threshold": false,
+          "threshold_file": "secondlook/rungs/classifier_threshold.json",
+          "threshold_file_sha256": "686e0e6379be42271501c7016e4c16b1cdfef759904818f6382c5f37479eb53c",
+          "dev_split_sha256": "fb2dc36a0974ca29c0f95116ff0737f6385e731f96c6b3d370e433e820ed4fd5",
+          "frozen_at": "2026-10-29T03:51:27Z",
+          "gate_result": "FAIL",
+          "gate": {
+            "result": "FAIL",
+            "run_id": "gate-20261029-040012",
+            "results": "docs/RESULTS-v2.md",
+            "reason": "original: false-positive upper bound 9.718% is above 2%",
+            "failed_arm": "original",
+            "false_positive_upper_bound": 0.09718,
+            "false_positive_limit": 0.02,
+            "threshold_sha256": "686e0e6379be42271501c7016e4c16b1cdfef759904818f6382c5f37479eb53c",
+            "gate_file": "secondlook/rungs/classifier_gate.json",
+            "gate_file_sha256": "b2131148b3e0f76c078348bc67c9906710fcadd116010bffc403bfca68c5bf4d"
+          },
+          "raises_concern": false
+        }
+      },
+      {
+        "rung": "watermark",
+        "finding": "Second Look's own watermark was not found: 104 of 256 bits match our message, near the 128 expected by chance.",
+        "proves": "Only that our own mark is not readable in this copy.",
+        "does_not_prove": "The absence of a mark says nothing about how the image was made. This looks only for Second Look's own mark. It does not detect Meta AI images or any other company's watermark.",
+        "strength": "none",
+        "raw": {
+          "present": false,
+          "matched_bits": 104,
+          "bits": 256,
+          "min_match": 175,
+          "p_value_if_unmarked": 0.9989331544136222,
+          "key_id": "2372a8b02093",
+          "demo_key": true,
+          "model": "Meta Video Seal 1.0 (image model y_256b_img, TorchScript)",
+          "weights_sha256": "5c7a4581c36fc6090aafdcfb3999123bae5172a4847f22e2da4e7fd1a39d1e1b",
+          "device": "mps",
+          "seconds": 0.3943
+        }
+      }
+    ],
+    "steps": [
+      {
+        "n": 1,
+        "tool": "run_ladder",
+        "arguments": {
+          "path": "04-ai-firefly-typography-logo.jpg"
+        },
+        "result": "Ran the file checks: 3 cards. Fixed rules give the answer from these cards.",
+        "ok": true,
+        "by": "model",
+        "seconds": 0.77,
+        "template": "run_ladder",
+        "search_source": null
+      },
+      {
+        "n": 2,
+        "tool": "read_text_in_image",
+        "arguments": {
+          "path": "04-ai-firefly-typography-logo.jpg"
+        },
+        "result": "Read the words printed in the image: 2 lines, shown as a model reading.",
+        "ok": true,
+        "by": "model",
+        "seconds": 49.67,
+        "template": "read_text_in_image.lines",
+        "search_source": null
+      }
+    ],
+    "explanation": "1. Ran the file checks: 3 cards. Fixed rules give the answer from these cards.\n2. Read the words printed in the image: 2 lines, shown as a model reading.\nA signed record from a listed signer says AI made this, but not who made it or why.\nA record signed by a certificate on the C2PA interim trust list says AI made this, but not who made it or why.\nA detector scored this 0.16 out of 1, but our cut-off of 0.432 failed its test, so it is no concern.\nSecond Look's own hidden mark is not here (104 of 256 bits match), and that says nothing about how this was made.",
+    "explanation_lines": [
+      {
+        "template": "step.run_ladder",
+        "text": "1. Ran the file checks: 3 cards. Fixed rules give the answer from these cards."
+      },
+      {
+        "template": "step.read_text_in_image.lines",
+        "text": "2. Read the words printed in the image: 2 lines, shown as a model reading."
+      },
+      {
+        "template": "e1.signed_ai",
+        "text": "A signed record from a listed signer says AI made this, but not who made it or why."
+      },
+      {
+        "template": "e1.c2pa.trusted.ai",
+        "text": "A record signed by a certificate on the C2PA interim trust list says AI made this, but not who made it or why."
+      },
+      {
+        "template": "e1.classifier.gate_failed",
+        "text": "A detector scored this 0.16 out of 1, but our cut-off of 0.432 failed its test, so it is no concern."
+      },
+      {
+        "template": "e1.watermark.absent",
+        "text": "Second Look's own hidden mark is not here (104 of 256 bits match), and that says nothing about how this was made."
+      }
+    ],
+    "explanation_source": "rules",
+    "explanation_label": "Written by Second Look's rules from fixed templates, not by a model",
+    "image_text": [
+      "ADBE",
+      "FIRLE"
+    ],
+    "facts": [],
+    "label": "model reading, not evidence",
+    "problems": [],
+    "model": "muse-glimmer",
+    "model_seconds": 38.33,
+    "seconds": 88.78,
+    "version": "15cdea61e3865415a1a3bb46484203910a0cc4fd",
+    "engine": "ladder",
+    "rungs": [
+      "c2pa",
+      "iptc",
+      "exif",
+      "classifier",
+      "watermark",
+      "context"
+    ],
+    "demo": false,
+    "glimmer": "ran"
+  }
+}

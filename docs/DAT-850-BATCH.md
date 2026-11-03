@@ -1,0 +1,62 @@
+# The batch view, /batch (DAT-850)
+
+Second Look's buyer workflow is a folder in, one receipt per file out (PLAN/PILOT-HYPOTHESIS.md). This adds the page for it on top of the merged batch API (B1, DAT-871).
+
+## What it does
+
+- `GET /batch` serves `static/batch.html` with its own `batch.js`, `batch.css` and `batch-zip.js`. It shares only `app.css`'s tokens. The single-file page gets one link, "Check a folder", in its header (`index.html`, and the `.nav-link` rule in `app.css`). `app.js` is not touched.
+- Drop a folder (walked with the browser's entries API), drop several files, click to choose images, or use "Choose a folder". Hidden files (`.DS_Store`) are left out. A file that is not an image, is empty or is over 25 MB gets a "Not checked" row with the API's own wording and is not sent.
+- Files go to `POST /api/batch?receipt=1` on 127.0.0.1, at most 20 files and 100 MB per request (the API's limits). A larger folder is sent in sets of up to 20 files and 100 MB (`sets()` in `batch.js`: eight files of 14 MB go as 7 and 1); near-duplicate copies are then grouped within each set, and the page says so as soon as the run starts: "Files are sent in sets of up to 20 files and 100 MB, so near-duplicate copies are grouped only within each set."
+- While a set is checked, the line under the heading counts the seconds ("Checking 9 files. 12 s so far. Answers appear together when this set finishes."): the API answers a set in one response, so the rows fill in together. The screen-reader status line is told once per set, not every second.
+- One row per file: the file's path, the answer headline in the single-file page's words (`ANSWERS`, `COUNT`, `concernLabel` and `RUNGS` are copied from `app.js`, and a test fails if they drift; "Signed as AI-made" is in rust, `--rust-text` here because the row headline is small), the first concern's finding word for word for a concern answer (`concernReason()`, the single-file page's words without its ", listed first below", since a row has no list below; a test runs both functions on the same cards), how many checks ran, any check that could not run, the seconds the check took, and a "Receipt" link on the same line. Demo answers carry "Demo answer".
+- Near-duplicate copies: each row in a group is tagged by the other rows' numbers ("Near-duplicate of rows 3, 7"), and a list under the rows names each group's rows and files with the API's own note ("Information only. ... never change an answer"). A row's tag names at most six other rows, then "and N more" (`dupTag()`), since a set of 20 can make a group of 20; the list under the rows names every row. A run of more than one set always says that copies are grouped only within each set.
+- Receipts: a "Receipt" link per row (a `download` link to the receipt's own bytes), and "Download all 9 receipts (.zip)" with the real count. One line under the heading says what a receipt holds: the file's name, size and sha256, the versions that checked it, the answer, and every clue with what it does not prove (`secondlook/receipt.py`, `build`). The zip is built in the page from the bytes the server sent: `receipts/NNNN-<file>.receipt.json` byte for byte as `secondlook check --receipt` writes it, its `.sha256` beside it in `sha256sum` format, and `summary.json`, one row per file. Entries are stored and dated 1 Jan 1980, so the same receipts give the same zip. The file list is `bundleFiles()` in `batch.js`, a plain function the tests call.
+- Every control is at least 44 px tall at 390 px (the buttons, the row's "Receipt" link and the header's "Check one file" / "Check a folder" link). The footer is as wide as the page on wide screens.
+
+## Server change (`app.py`, the batch function only)
+
+- Each checked file now carries `seconds`, the time its check took.
+- `?receipt=1` adds `receipt` (the dict), `receipt_json` (the canonical JSON text), `receipt_sha256` and `receipt_name`. A receipt that fails leaves the answer and sets `receipt_error`.
+- Each upload is written to its own numbered folder under its cleaned name (`safe_name`). The receipt records the name the user gave the file (`given_name`: the upload's base name, unchanged), so a batch receipt is byte for byte the one `secondlook check --receipt` writes for a file of that name, "ünïcode name.png" included. The API's `file` key stays the cleaned name.
+
+## Claims
+
+No new claim. Every sentence on the page is either the single-file page's wording or a plain description of what the code does: the files are checked on this computer (`127.0.0.1`), each on its own, and the temp folder is deleted when the request returns (`tempfile.TemporaryDirectory` in `check_batch`). The banned-word list from `tests/test_web.py` runs over all four batch files.
+
+## Tests
+
+`tests/test_batch_page.py`, 17 tests (two added in design fix round 2: the sets note's exact text in the page and this doc, checked against `sets()` itself under node, where eight files of 14 MB go as 7 and 1 and 23 small files as 20 and 3; and the near-duplicate tag's cap, six rows then "and N more", up to a group of 20): the route and its headers and files, the link both ways, no URL off this computer, `seconds` and the receipt (canonical bytes, sha256, the user's file name, demo flag, a failed receipt), the batch receipt against the CLI's (`secondlook check --receipt` through `cli.main`, same rungs, a fixed `created_at`, the name "ünïcode name.png": the JSON and the `.sha256` line are byte-identical), groups with receipts on, the zip from the page's own code (`bundleFiles` in `batch.js`, then `batch-zip.js`, under node, on a real `/api/batch` response with a refused file and a near-duplicate pair: Python's `zipfile` opens it, CRCs check, the entry list is exactly every receipt and its `.sha256` in row order plus `summary.json`, each receipt and sha256 line is byte-exact, and each summary row matches its file; dropping any one receipt, any `.sha256` or `summary.json` fails it, checked by editing `bundleFiles` three ways), both scripts parse, the answer words match `app.js`, `concernReason()` matches `app.js`'s on the same cards, banned words, and no small text in brand rust.
+
+## Captures (`docs/DAT-850-BATCH-SHOTS/`)
+
+Taken with `capture.mjs` through `~/bin/headless-run` (chrome-headless-shell, muted) on the tree of the commit that adds them (design fix round 3: `batch.css` and `capture.mjs` as committed; the page's version line reads `c288156`, the parent, because the server ran from the working tree before the commit), on the real ladder (`python -m secondlook.web`, no caption, so 5 checks ran per file), with the nine N1 demo samples. Nothing is held or slowed: the running shot is taken while the real request is in flight, so every "Took" line is the real time. 0 requests went off 127.0.0.1 (`batch-capture.json`). The server had already loaded its models in earlier runs, so the nine files took 7.2 s; on a fresh server the first file also loads them.
+
+| State | 1280 px | 740 px | 390 px |
+|---|---|---|---|
+| The single-file page, with its "Check a folder" link | `batch-0-main-desktop.png` | `batch-0-main-tablet.png` | `batch-0-main-phone.png` |
+| Empty | `batch-1-empty-desktop.png` | `batch-1-empty-tablet.png` | `batch-1-empty-phone.png` |
+| Running ("Checking 9 files. 2 s so far. Answers appear together when this set finishes.") | `batch-2-running-desktop.png` | `batch-2-running-tablet.png` | `batch-2-running-phone.png` |
+| Done, nine files ("9 files: 9 checked. Took 7.2 s in all.") | `batch-3-done-desktop.png` | `batch-3-done-tablet.png` | `batch-3-done-phone.png` |
+| A check that could not run: three files on a second server started with `SECONDLOOK_VIDEOSEAL_WEIGHTS` pointing at no file ("1 check could not run: Watermark.") | `batch-4-could-not-run-desktop.png` | `batch-4-could-not-run-tablet.png` | `batch-4-could-not-run-phone.png` |
+| Two sets: 23 files (the five smallest samples and 18 renamed copies), sent as 20 and 3, with the sets note (shown from the start of the run) and tags capped at six rows | `batch-5-two-sets-desktop.png` | `batch-5-two-sets-tablet.png` | `batch-5-two-sets-phone.png` |
+| A long name: a folder chosen with "Choose a folder", holding `holiday-2024/sydney/day-03-harbour-bridge-and-opera-house-at-dusk/IMG_20240114_183522_HDR_edited-final-v2.jpg` (sample 03, "Signed as AI-made") and `holiday-2024/IMG_0001.jpg` (sample 07, its stripped copy), so both rows are tagged | `batch-6-long-name-desktop.png` | `batch-6-long-name-tablet.png` | `batch-6-long-name-phone.png` |
+
+The capture fails, not just records (it writes `batch-capture.json` with the reasons under `failures`, then throws, so `headless-run` exits 1), when:
+
+- the sets note is missing or reads otherwise at the start of the two-set run (read while the first set is still in flight);
+- a row's "Receipt" link box is under 44 px tall, on every checked row of the done, two-set and long-name states at 1280, 740 and 390 px;
+- a row with tags has a file cell that does not span both grid rows, at the three-column widths (1280 and 740 px; at 390 px the row is one column);
+- the first tag sits more than 10 px under the lowest line of the answer and facts text on any row of those states at any of the three widths, the long-name row included; and the long name must wrap to three or more lines at 1280 px and carry a tag, so that row tests the case.
+
+Checked both ways. The same `capture.mjs` against a server on this branch's parent `c288156` (both grid rows `auto`) failed: "long name at 1280 px, row 2: the first tag is 41.2 px under the answer, over 10" and "long name at 740 px, row 2: the first tag is 58.8 px under the answer, over 10". With `.row:has(.btag) { grid-template-rows: auto 1fr; }` it passed with no failures: the long name wraps to 5 lines at 1280 px, 7 at 740 px and 4 at 390 px, and its tag sits 5.5, 9.5 and 9.5 px under the answer; across the done, two-set and long-name states the largest gap is 9.5 px and every "Receipt" box is 44 px. At 390 px the one-column rows reset `grid-template-rows` to `none`, so the 1fr track never lands on the answer.
+
+Also measured in the same run: every visible link, button and the drop zone is 44 px tall or more at 390 px (3 controls on the empty page, 12 on the done page, 26 on the two-set page; the header link is 46.8 px); "Signed as AI-made" is `rgb(158, 69, 38)`, the `--rust-text` token; the footer and the page are both 1040 px wide at 1280 px; the zip button reads "Download all 9 receipts (.zip)"; each row's "Receipt" link downloads `<file>.receipt.json`. The capture also clicked the zip button: the saved zip holds 19 entries, 9 receipts, their 9 `.sha256` lines and `summary.json`. The sets note reads "Files are sent in sets of up to 20 files and 100 MB, so near-duplicate copies are grouped only within each set." while the first set is still running and after. At 1280 px the facts line starts 16 px below the row's top, level with the file name (17 px) and the headline (13 px; it is set larger). The widest tag, "Near-duplicate of rows 3, 4, 8, 9, 10, 13 and 5 more", is 321 px in a 358 px row at 390 px (`multiDupWidths390`). Keyboard: Tab goes skip link, "Check one file", then the drop zone's file input; once answers show, focus moves to "Answers, one per file".
+
+### Polish round (follow-up from the PR #34 review, a reviewer)
+
+From 721 to 800 px the facts line wrapped and left a dangling "·" at the end of the first line, before "Receipt". `batch.js` now puts "· Receipt" in one `nowrap` span (`.row-facts .nowrap`), so the pair wraps together: at 760 px the second line starts with "· Receipt" (`batch-3-done-760.png`, nine files, the same run as the next file). `capture.mjs` also fails when the "·" and the word "Receipt" are on different lines, and checks that at 721, 760 and 800 px as well as the three shot widths. Capture `batch-capture-polish.json`: 0 failures, 0 requests off 127.0.0.1; on the done, two-set and long-name states every "Receipt" box is 44 px and the largest gap above a tag is 9.5 px at all six widths. The other shots are the earlier ones, not retaken.
+
+## Left for later
+
+- A PDF per file in the zip (the API returns JSON receipts only; a PDF each would need the PDF writer per file on the server).
+- PR #32 (w11-design-2) also edits `app.py` (`to_body` takes a fourth argument there). The batch function here calls `to_body(*checked)`, so it should take that change without edits, but whichever merges second needs a rebase check.

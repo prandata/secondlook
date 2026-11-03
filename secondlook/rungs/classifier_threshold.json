@@ -1,0 +1,89 @@
+{
+  "schema": "second-look-threshold/2",
+  "threshold": 0.4319957792758942,
+  "ai_if": "score>=threshold",
+  "abstain": {
+    "rule": "none"
+  },
+  "classifier": {
+    "name": "Community Forensics ViT-S/16 384 (OwensLab/commfor-model-384)",
+    "version": "6076002bf0d9dd37537f965ee2f06f826c333b61",
+    "weights_sha256": "b89f36275f3bf5e2b040eee36597a8f19db051bff9a473a9cf7b2466284fb387"
+  },
+  "dev_split_sha256": "fb2dc36a0974ca29c0f95116ff0737f6385e731f96c6b3d370e433e820ed4fd5",
+  "test_split_sha256": "f59847e2b5978618003e709eb26a2e3ed49b3b640f6f413f3f4b2336db37a3ca",
+  "split_json_sha256": "c6d485ec688583a23dd124c2a6488bc1facc5ed150b75b2f9b988de50b536403",
+  "l4_lock_sha256": "04ebb07c1d7e7704d6577ffa83379778429df61fa701bfccf5075d2900ae4e93",
+  "v2_lock_sha256": "432cc97c6752275dd81edeac20fa63dd119cbf58701e88f48e61bbabb54dca2b",
+  "phash_distance": 8,
+  "gate_arms": [
+    "original",
+    "format_matched"
+  ],
+  "training_data_statement": "Detector: Community Forensics ViT-S/16 384 (OwensLab/commfor-model-384, revision 6076002b, Park and Owens, CVPR 2025). Overlap verdict: same generator family on the AI side; no image-level overlap found on either side. AI side: the detector's training generators include the Stable Diffusion 1.x checkpoints themselves (CompVis/stable-diffusion-v1-1, v1-2, v1-3, v1-4 and runwayml/stable-diffusion-v1-5) among 4,763 Hugging Face latent diffusion models in the Systematic subset it trains on (systematic_set_metadata.csv; the dataset card: 'a vast majority of the generators we collect are derivatives of Stable Diffusion'). Our AI test images are Stable Diffusion 1.x output from DiffusionDB, exact version unrecorded, so the AI side is an in-family test, not a held-out-generator test. DiffusionDB is not named as a source in the paper, the dataset card or the code repository's README; the authors sampled the training images themselves from captions of real datasets or BLIP (paper section 3.5), so DiffusionDB's own images are not in it, and the released LAION training link list holds no DiffusionDB link. Real side: Wikimedia Commons is not a named real-image source. The real training images are LAION 40.30%, ImageNet 40.30%, CelebA 7.15%, COCO 4.39%, LandscapesHQ 3.34%, FFHQ 2.34%, IMD2020 1.17%, AFHQv2 0.59%, VISION 0.25%, Forchheim 0.13% and MetFaces 0.05% (dataset card). The released LAION link list (2,000,000 rows) holds 2,034 Commons file URLs and none of the 1,088 Commons files in our manifest (matched by file name, 28 Oct 2026). Not checked: ImageNet and the other real sets image by image, copies of our photos at other URLs, and the backbone's CLIP pretraining on LAION-2B (paper section 4.1), which is web-crawled and may hold Commons photographs; Stable Diffusion 1.x was itself trained on subsets of LAION-2B(en) (its model card). Overlap with the real side's distribution is therefore possible but not measured.",
+  "training_data_overlap": "same_generator_family",
+  "training_data_sources": [
+    "https://arxiv.org/abs/2411.04125v2 (sections 3.1 to 3.5 and 4.1)",
+    "https://huggingface.co/datasets/OwensLab/CommunityForensics/blob/f0b06f79d20389706bb76c626391fa870e0bf604/README.md",
+    "https://huggingface.co/datasets/OwensLab/CommunityForensics/blob/f0b06f79d20389706bb76c626391fa870e0bf604/data/metadata/systematic_set_metadata.csv",
+    "https://huggingface.co/datasets/OwensLab/CommunityForensics/blob/f0b06f79d20389706bb76c626391fa870e0bf604/data/Real/laion_commfor_train_subset_2M.csv",
+    "https://github.com/JeongsooP/Community-Forensics/blob/ee5b71d43db0f3779e1edd64ee927b13f2dd6ad4/README.md",
+    "https://huggingface.co/OwensLab/commfor-model-384/blob/6076002bf0d9dd37537f965ee2f06f826c333b61/README.md",
+    "https://huggingface.co/datasets/poloclub/diffusiondb/blob/fb620fbe49fa4420e0734bd9c0df11f51176b61f/README.md",
+    "https://huggingface.co/CompVis/stable-diffusion-v1-4/blob/133a221b8aa7292a167afc5127cb63fb5005638b/README.md"
+  ],
+  "frozen_at": "2026-10-29T03:51:27Z",
+  "frozen_by": "wsai-lead",
+  "rule": "in each gate arm, the lowest threshold with dev real FPR <= 0.02 (ties at the cut stay below); the highest of these is frozen (wsai-lead ruling, DAT-849 ec3ad415)",
+  "threshold_from_arms": [
+    "original"
+  ],
+  "arms": {
+    "original": {
+      "threshold": 0.4319957792758942,
+      "dev_scores_sha256": "50e49e4fbb9352d456058de75db1e1ad0adc3695b988106abc3daac49ca47951",
+      "dev_metrics_at_arm_threshold": {
+        "n_real": 125,
+        "n_ai": 120,
+        "false_positives": 2,
+        "true_positives": 119,
+        "fpr": 0.016,
+        "tpr": 0.9916666666666667
+      },
+      "dev_metrics": {
+        "n_real": 125,
+        "n_ai": 120,
+        "false_positives": 2,
+        "true_positives": 119,
+        "fpr": 0.016,
+        "tpr": 0.9916666666666667
+      },
+      "devices": [
+        "mps"
+      ]
+    },
+    "format_matched": {
+      "threshold": 0.1308805346488953,
+      "dev_scores_sha256": "f95cc7435d0b5c70ad73273b71a808a7469af3625bf94ed871573fe46bc4d295",
+      "dev_metrics_at_arm_threshold": {
+        "n_real": 125,
+        "n_ai": 120,
+        "false_positives": 2,
+        "true_positives": 119,
+        "fpr": 0.016,
+        "tpr": 0.9916666666666667
+      },
+      "dev_metrics": {
+        "n_real": 125,
+        "n_ai": 120,
+        "false_positives": 1,
+        "true_positives": 119,
+        "fpr": 0.008,
+        "tpr": 0.9916666666666667
+      },
+      "devices": [
+        "mps"
+      ]
+    }
+  }
+}

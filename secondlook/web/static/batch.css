@@ -1,0 +1,81 @@
+/* The batch view (DAT-850). Built on app.css's tokens; every small rust text uses --rust-text (AA on cream). */
+main.wide, footer.wide { max-width: 1040px; }
+
+#bdrop { display: flex; flex-direction: column; justify-content: center; min-height: 220px; border: 1.5px dashed var(--tint);
+         border-radius: 14px; padding: 32px 20px; text-align: center; cursor: pointer; background: var(--paper);
+         transition: background .15s, border-color .15s; }
+#bdrop:hover, #bdrop.over { background: #EFE6D3; border-color: var(--rust); }
+#bdrop strong { font: 700 28px/1.2 var(--serif); display: block; margin-bottom: 6px; letter-spacing: -0.01em; }
+#bdrop span { color: var(--soft); font-size: 14.5px; }
+#files:focus-visible + #bdrop { outline: 3px solid var(--rust); outline-offset: 3px; border-color: var(--rust); }
+.pick-folder { margin: 12px 0 0; text-align: center; }
+
+/* Every control is at least 44 px tall, the touch-target size, at every width. */
+#folder-go, #batch-again { font: 600 14.5px/1 var(--sans); color: var(--ink); background: transparent; min-height: 44px;
+  border: 1px solid var(--ink); border-radius: 8px; padding: 10px 14px; cursor: pointer; }
+#folder-go:hover, #batch-again:hover { background: #EFE6D3; }
+#zip-go { font: 600 14.5px/1 var(--sans); color: var(--cream); background: var(--ink); border: 0; border-radius: 8px;
+          min-height: 44px; padding: 11px 16px; cursor: pointer; }
+#zip-go:disabled { background: var(--soft); cursor: default; }
+#zip-go:not(:disabled):hover { background: #1A1D20; }
+
+.batch-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+              border-bottom: 2px solid var(--ink); padding-bottom: 12px; }
+.batch-head h2 { margin: 0; }
+.batch-head h2:focus { outline: none; }
+.batch-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.zip-note { color: var(--soft); font-size: 14px; margin: 10px 0 0; max-width: 70ch; }
+.batch-progress { color: var(--soft); margin: 10px 0 4px; font-variant-numeric: tabular-nums; }
+.sets-note { color: var(--soft); font-size: 14px; margin: 0 0 4px; max-width: 70ch; }
+
+.rows { list-style: none; margin: 0; padding: 0; }
+.row { display: grid; grid-template-columns: minmax(0, 2.2fr) minmax(0, 3fr) minmax(0, 1.6fr); gap: 6px 20px;
+       align-items: start; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.row-file { display: flex; gap: 10px; min-width: 0; font-weight: 600; }
+/* On a row with tags the file cell spans both grid rows, so a name that wraps does not push the tags down from
+   under the answer. A row with no tags keeps one grid row (no empty second row and row gap). The second row takes
+   the extra height of a name that wraps to three or more lines, so the first row stays the answer's height. */
+.row:has(.btag) { grid-template-rows: auto 1fr; }
+.row:has(.btag) .row-file { grid-row: span 2; }
+.row-n { color: var(--soft); font-weight: 400; font-variant-numeric: tabular-nums; min-width: 2ch; }
+.row-name { overflow-wrap: anywhere; min-width: 0; }
+.row-answer { min-width: 0; }
+.row-headline { margin: 0; font: 700 18px/1.25 var(--serif); }
+.row.waiting .row-headline, .row.checking .row-headline { font: 400 15px/1.4 var(--sans); color: var(--soft); }
+.row.refused .row-headline { font: 600 15px/1.4 var(--sans); }
+.row.signed_ai .row-headline { color: var(--rust-text); }  /* as on the single-file page, in the AA rust */
+.row.concerns .row-headline { text-decoration: underline 3px var(--rust); text-underline-offset: 5px; }
+.row-reason { margin: 4px 0 0; font-size: 14.5px; overflow-wrap: anywhere; }
+.row-warn { margin: 4px 0 0; font-size: 14px; color: var(--rust-text); }
+.row-facts { margin: 0; color: var(--soft); font-size: 14.5px; font-variant-numeric: tabular-nums; }
+/* A 44 px target that takes only a line's height: the negative margins keep it from pushing the facts line down. */
+.receipt-link { display: inline-flex; align-items: center; min-height: 44px; margin-block: -11px; color: var(--ink);
+                font-weight: 600; text-underline-offset: 3px; }
+/* A262: the receipt link sits on its own line under the facts (a flex line, so the 44 px target keeps its margins). */
+.row-facts .receipt-link { display: flex; width: max-content; }
+.receipt-link:hover { color: var(--rust-text); }
+/* A272: the facts wrap whole. Every fact draws a "·" in the 1.2em before it; the list starts 1.2em left of its
+   clipping line, so the dot of whichever fact starts a line (the first one, or one that wrapped) is cut off. */
+.facts-line { display: block; overflow: hidden; }
+.facts-list { display: flex; flex-wrap: wrap; margin-left: -1.2em; }
+.fact { white-space: nowrap; }
+.fact::before { content: "·"; display: inline-block; width: 1.2em; text-align: center; }
+.row-tags { grid-column: 2 / 4; display: flex; gap: 8px; flex-wrap: wrap; }
+.row-tags:empty { display: none; }
+.btag { font: 600 12px/1 var(--sans); border-radius: 999px; padding: 5px 9px; }
+.btag.dup { color: var(--ink); border: 1px solid var(--ink); }
+.btag.demo { color: var(--cream); background: var(--ink); }
+
+.dups { margin-top: 24px; }
+.dups h3 { margin-bottom: 6px; }
+.dups ul { margin: 0 0 6px; padding-left: 20px; overflow-wrap: anywhere; }
+.dup-note { color: var(--soft); font-size: 14px; margin: 0; max-width: 70ch; }
+.meta { color: var(--soft); font-size: 13px; margin-top: 20px; overflow-wrap: anywhere; }
+#batch-status:empty { display: none; }
+
+@media (max-width: 720px) {
+  .row { grid-template-columns: minmax(0, 1fr); }
+  .row-file, .row-answer, .row-facts, .row-tags { grid-column: 1; }
+  .row:has(.btag) { grid-template-rows: none; }
+  .row:has(.btag) .row-file { grid-row: auto; }
+}

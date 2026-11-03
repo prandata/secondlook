@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+/samples/*
+!/samples/recorded/
+data/
+*.egg-info/
+.pytest_cache/
+secondlook/trust/interim/
+# the fact-check feed that docs/README-for-judges.md step 8 downloads into the clone (about 200 MB)
+/claimreview.json

@@ -1,0 +1,29 @@
+{
+  "offHost": [],
+  "states": {
+    "sd-above": {
+      "file": "sd-dev-00f19154.png",
+      "answer": "Can't tell",
+      "reason": "",
+      "explain": "Second Look can't tell how this was made, and finding nothing is not evidence either way.",
+      "clues": "CLASSIFIER\nSIGNAL\n\nCommunity Forensics detector score 1.000 (0 to 1). A threshold of 0.432 was frozen in advance, and our test of it failed (false flags up to 9.7% on photos in their original format, above the 2% limit; see docs/RESULTS-v2.md). This score raises no concern on its own.\n\nPROVES\nNothing on its own: the frozen threshold failed its test.\nDOES NOT PROVE\nIt is not proof that the image was made by AI, or by a camera. The model can be wrong, especially on generators it never saw, heavy compression, screenshots and edited photos.",
+      "quiet": "Checked, nothing found (2)\nWATERMARK\nNOTHING FOUND\n\nSecond Look's own watermark was not found: 127 of 256 bits match our message, near the 128 expected by chance.\n\nPROVES\nOnly that our own mark is not readable in this copy.\nDOES NOT PROVE\nThe absence of a mark says nothing about how the image was made. This looks only for Second Look's own mark. It does not detect Meta AI images or any other company's watermark.\nORIGIN\nNOTHING FOUND\n\nChecked: c2pa, iptc, exif, classifier, watermark. None found a signed provenance record, an AI label in the metadata, or a classifier score that raises a concern.\n\nPROVES\nOnly that the checks listed here found nothing on this file.\nDOES NOT PROVE\nNot finding anything does not show how the image was made: metadata is easily stripped, and the classifier is not reliable on every image. It is not evidence either way."
+    },
+    "ai-sample": {
+      "file": "07-stripped-firefly-mountain-landscape.jpg",
+      "answer": "Can't tell",
+      "reason": "",
+      "explain": "Second Look can't tell how this was made, and finding nothing is not evidence either way.",
+      "clues": "None of the checks found a signal in this file.",
+      "quiet": "Checked, nothing found (3)\nCLASSIFIER\nNOTHING FOUND\n\nCommunity Forensics detector score 0.019 (0 to 1). A threshold of 0.432 was frozen in advance, and our test of it failed (false flags up to 9.7% on photos in their original format, above the 2% limit; see docs/RESULTS-v2.md). This score raises no concern on its own.\n\nPROVES\nNothing on its own: the frozen threshold failed its test.\nDOES NOT PROVE\nIt is not proof that the image was made by AI, or by a camera. The model can be wrong, especially on generators it never saw, heavy compression, screenshots and edited photos.\nWATERMARK\nNOTHING FOUND\n\nSecond Look's own watermark was not found: 135 of 256 bits match our message, near the 128 expected by chance.\n\nPROVES\nOnly that our own mark is not readable in this copy.\nDOES NOT PROVE\nThe absence of a mark says nothing about how the image was made. This looks only for Second Look's own mark. It does not detect Meta AI images or any other company's watermark.\nORIGIN\nNOTHING FOUND\n\nChecked: c2pa, iptc, exif, classifier, watermark. None found a signed provenance record, an AI label in the metadata, or a classifier score that raises a concern.\n\nPROVES\nOnly that the checks listed here found nothing on this file.\nDOES NOT PROVE\nNot finding anything does not show how the image was made: metadata is easily stripped, and the classifier is not reliable on every image. It is not evidence either way."
+    },
+    "camera-sample": {
+      "file": "06-stripped-pixel10pro-atlantic-sign.jpg",
+      "answer": "Can't tell",
+      "reason": "",
+      "explain": "Second Look can't tell how this was made, and finding nothing is not evidence either way.",
+      "clues": "None of the checks found a signal in this file.",
+      "quiet": "Checked, nothing found (3)\nCLASSIFIER\nNOTHING FOUND\n\nCommunity Forensics detector score 0.001 (0 to 1). A threshold of 0.432 was frozen in advance, and our test of it failed (false flags up to 9.7% on photos in their original format, above the 2% limit; see docs/RESULTS-v2.md). This score raises no concern on its own.\n\nPROVES\nNothing on its own: the frozen threshold failed its test.\nDOES NOT PROVE\nIt is not proof that the image was made by AI, or by a camera. The model can be wrong, especially on generators it never saw, heavy compression, screenshots and edited photos.\nWATERMARK\nNOTHING FOUND\n\nSecond Look's own watermark was not found: 124 of 256 bits match our message, near the 128 expected by chance.\n\nPROVES\nOnly that our own mark is not readable in this copy.\nDOES NOT PROVE\nThe absence of a mark says nothing about how the image was made. This looks only for Second Look's own mark. It does not detect Meta AI images or any other company's watermark.\nORIGIN\nNOTHING FOUND\n\nChecked: c2pa, iptc, exif, classifier, watermark. None found a signed provenance record, an AI label in the metadata, or a classifier score that raises a concern.\n\nPROVES\nOnly that the checks listed here found nothing on this file.\nDOES NOT PROVE\nNot finding anything does not show how the image was made: metadata is easily stripped, and the classifier is not reliable on every image. It is not evidence either way."
+    }
+  }
+}

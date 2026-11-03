@@ -1,0 +1,273 @@
+{
+  "schema": "second-look-recorded-run/1",
+  "sample": {
+    "id": "02",
+    "file": "02-camera-pixel10pro-utah-sign.jpg",
+    "sha256": "fbb1bb7183dc018e092ec3dda7a565543e605f25fe78d21818dbf61a888800d5",
+    "licence": "CC BY 4.0",
+    "credit": "Bobjgalindo, own work, via Wikimedia Commons"
+  },
+  "caption": null,
+  "model": {
+    "name": "Muse Glimmer 30B",
+    "served_as": "muse-glimmer",
+    "file": "Muse-Glimmer-30B-KQuant-17GB-Q4_K_M.gguf",
+    "sha256": "4cc57c0f51040a226e5a72cc47b7613f7772950e460a665f7083de89f183f60e",
+    "projector_file": "mmproj-Muse-Glimmer-30B-Q4_K_M.gguf",
+    "projector_sha256": "f48b452316f9b213758e8659444029b961a24a07f99a1abb2a9f88b06f7c00c6"
+  },
+  "llama_cpp_build": "b11669-620d2225c",
+  "git_commit": "15cdea61e3865415a1a3bb46484203910a0cc4fd",
+  "machine": "Apple M5 Max (128 GB)",
+  "os": "macOS-26.6.2-arm64-arm-64bit",
+  "date_utc": "2026-10-29T15:02:26Z",
+  "seconds": 74.8,
+  "seconds_cover": "the whole deep check, the file checks included; their weights were loaded before timing, as the page loads them before it says Ready",
+  "note": {
+    "file": "02-camera-pixel10pro-utah-sign.jpg",
+    "answer": "signed_camera",
+    "summary": "A valid Content Credentials manifest says this was captured by a camera. That is not proof that what it shows, or any claim about it, is true.",
+    "evidence": [
+      {
+        "rung": "c2pa",
+        "finding": "C2PA manifest signed by Google LLC on 2025-12-30 via Google C2PA SDK for Android 824699194:839895461; it declares a camera capture (computationalCapture). The signer is on the C2PA Trust List (2026-10-17).",
+        "proves": "The signer recorded a device capture. The signer chains to that list and the file has not changed since it was signed.",
+        "does_not_prove": "That the scene is as shown or the caption is true; a signed capture can still be staged or mislabelled.",
+        "strength": "signed",
+        "raw": {
+          "sdk": "c2pa-python 0.91.6",
+          "validation_state": "Trusted",
+          "valid": true,
+          "trusted": true,
+          "trusted_by": "official",
+          "trust_list": {
+            "name": "C2PA Trust List",
+            "source": "https://raw.githubusercontent.com/c2pa-org/conformance-public/47009eedfe6721edd0ce3e69b89c1101cd6f03e5/trust-list/C2PA-TRUST-LIST.pem",
+            "date": "2026-10-17",
+            "sha256": "b3949271a07b007e92ef1d18050b55388f5e0d2686a16fd864176c48421af8ae",
+            "id": "official",
+            "loaded": true
+          },
+          "trust_lists": [
+            {
+              "name": "C2PA Trust List",
+              "source": "https://raw.githubusercontent.com/c2pa-org/conformance-public/47009eedfe6721edd0ce3e69b89c1101cd6f03e5/trust-list/C2PA-TRUST-LIST.pem",
+              "date": "2026-10-17",
+              "sha256": "b3949271a07b007e92ef1d18050b55388f5e0d2686a16fd864176c48421af8ae",
+              "id": "official",
+              "loaded": true
+            },
+            {
+              "name": "C2PA interim trust list",
+              "source": "https://contentcredentials.org/trust/",
+              "date": "2026-10-28",
+              "files": {
+                "anchors.pem": "db57e50b9bd4e4c786cbb91f38fd85e2af6a9d5412438a8cddcc42688df07ae5",
+                "allowed.sha256.txt": "3597b20c9c20a0daadc7fab0d8c63534bd333ec6a715ef7117c7a4588caa15bb"
+              },
+              "id": "interim",
+              "loaded": true
+            }
+          ],
+          "failures": [],
+          "status_codes": [],
+          "signer_issuer": "Google LLC",
+          "signer_common_name": "Pixel Camera",
+          "sign_time": "2025-12-30T18:04:30+00:00",
+          "claim_generator": "Google C2PA SDK for Android 824699194:839895461",
+          "digital_source_types": [
+            "computationalCapture"
+          ],
+          "source_class": "camera",
+          "ai_ingredient": false,
+          "ai_tool_name": null,
+          "ai_label": false,
+          "actions": [
+            "c2pa.created"
+          ],
+          "ingredient_count": 0,
+          "embedded": true
+        }
+      },
+      {
+        "rung": "exif",
+        "finding": "EXIF names a camera: Google Pixel 10 Pro, dated 2025:12:30 11:04:29.",
+        "proves": "The file carries camera fields, as a camera or an editor wrote them.",
+        "does_not_prove": "That this camera took this picture: EXIF is unsigned and can be copied onto any image, including an AI-made one.",
+        "strength": "metadata",
+        "raw": {
+          "format": "JPEG",
+          "make": "Google",
+          "model": "Pixel 10 Pro",
+          "software": "HDR+ 1.0.839895461zd",
+          "datetime_original": "2025:12:30 11:04:29",
+          "lens": "Pixel 10 Pro back camera 6.9mm f/1.68",
+          "has_gps": true,
+          "source_class": "camera"
+        }
+      },
+      {
+        "rung": "exif",
+        "finding": "EXIF Software field names 'HDR+ 1.0.839895461zd'.",
+        "proves": "The last program to save the file wrote its name here.",
+        "does_not_prove": "How the image was made: editors overwrite this field and anyone can set it.",
+        "strength": "metadata",
+        "raw": {
+          "format": "JPEG",
+          "make": "Google",
+          "model": "Pixel 10 Pro",
+          "software": "HDR+ 1.0.839895461zd",
+          "datetime_original": "2025:12:30 11:04:29",
+          "lens": "Pixel 10 Pro back camera 6.9mm f/1.68",
+          "has_gps": true,
+          "ai_tool_name": null,
+          "ai_label": false
+        }
+      },
+      {
+        "rung": "classifier",
+        "finding": "Community Forensics detector score 0.001 out of 1. This score raises no concern on its own.",
+        "proves": "Nothing on its own. A threshold of 0.432 was frozen in advance, and our test of it failed. In that test, the upper bound on false flags for photos in their original format was 9.7%, above the 2% limit. See docs/RESULTS-v2.md.",
+        "does_not_prove": "A low score is not proof that a camera took it. Many AI images score low, especially after compression or from generators the model never saw.",
+        "strength": "none",
+        "raw": {
+          "score": 0.000759,
+          "model": "Community Forensics ViT-S/16 384 (OwensLab/commfor-model-384)",
+          "model_repo": "OwensLab/commfor-model-384",
+          "model_revision": "6076002bf0d9dd37537f965ee2f06f826c333b61",
+          "weights_sha256": "b89f36275f3bf5e2b040eee36597a8f19db051bff9a473a9cf7b2466284fb387",
+          "device": "mps",
+          "seconds": 1.7255,
+          "threshold": 0.4319957792758942,
+          "above_threshold": false,
+          "threshold_file": "secondlook/rungs/classifier_threshold.json",
+          "threshold_file_sha256": "686e0e6379be42271501c7016e4c16b1cdfef759904818f6382c5f37479eb53c",
+          "dev_split_sha256": "fb2dc36a0974ca29c0f95116ff0737f6385e731f96c6b3d370e433e820ed4fd5",
+          "frozen_at": "2026-10-29T03:51:27Z",
+          "gate_result": "FAIL",
+          "gate": {
+            "result": "FAIL",
+            "run_id": "gate-20261029-040012",
+            "results": "docs/RESULTS-v2.md",
+            "reason": "original: false-positive upper bound 9.718% is above 2%",
+            "failed_arm": "original",
+            "false_positive_upper_bound": 0.09718,
+            "false_positive_limit": 0.02,
+            "threshold_sha256": "686e0e6379be42271501c7016e4c16b1cdfef759904818f6382c5f37479eb53c",
+            "gate_file": "secondlook/rungs/classifier_gate.json",
+            "gate_file_sha256": "b2131148b3e0f76c078348bc67c9906710fcadd116010bffc403bfca68c5bf4d"
+          },
+          "raises_concern": false
+        }
+      },
+      {
+        "rung": "watermark",
+        "finding": "Second Look's own watermark was not found: 125 of 256 bits match our message, near the 128 expected by chance.",
+        "proves": "Only that our own mark is not readable in this copy.",
+        "does_not_prove": "The absence of a mark says nothing about how the image was made. This looks only for Second Look's own mark. It does not detect Meta AI images or any other company's watermark.",
+        "strength": "none",
+        "raw": {
+          "present": false,
+          "matched_bits": 125,
+          "bits": 256,
+          "min_match": 175,
+          "p_value_if_unmarked": 0.6690835696077723,
+          "key_id": "2372a8b02093",
+          "demo_key": true,
+          "model": "Meta Video Seal 1.0 (image model y_256b_img, TorchScript)",
+          "weights_sha256": "5c7a4581c36fc6090aafdcfb3999123bae5172a4847f22e2da4e7fd1a39d1e1b",
+          "device": "mps",
+          "seconds": 2.7033
+        }
+      }
+    ],
+    "steps": [
+      {
+        "n": 1,
+        "tool": "run_ladder",
+        "arguments": {
+          "path": "02-camera-pixel10pro-utah-sign.jpg"
+        },
+        "result": "Ran the file checks: 5 cards. Fixed rules give the answer from these cards.",
+        "ok": true,
+        "by": "model",
+        "seconds": 5.23,
+        "template": "run_ladder",
+        "search_source": null
+      },
+      {
+        "n": 2,
+        "tool": "read_text_in_image",
+        "arguments": {
+          "path": "02-camera-pixel10pro-utah-sign.jpg"
+        },
+        "result": "Read the words printed in the image: 3 lines, shown as a model reading.",
+        "ok": true,
+        "by": "model",
+        "seconds": 45.46,
+        "template": "read_text_in_image.lines",
+        "search_source": null
+      }
+    ],
+    "explanation": "1. Ran the file checks: 5 cards. Fixed rules give the answer from these cards.\n2. Read the words printed in the image: 3 lines, shown as a model reading.\nA signed record from a listed signer says a camera took this, but a scene can still be staged.\nA record signed by a certificate on the C2PA Trust List says a camera took this, but a scene can still be staged.\nThe file's EXIF fields (Make and Model) name a camera, but they can be copied, so they don't show it took this.\nThe file's EXIF Software field names the last program that saved it, but not how the image was made.\nA detector scored this under 0.01 out of 1, but our cut-off of 0.432 failed its test, so it is no concern.\nSecond Look's own hidden mark is not here (125 of 256 bits match), and that says nothing about how this was made.",
+    "explanation_lines": [
+      {
+        "template": "step.run_ladder",
+        "text": "1. Ran the file checks: 5 cards. Fixed rules give the answer from these cards."
+      },
+      {
+        "template": "step.read_text_in_image.lines",
+        "text": "2. Read the words printed in the image: 3 lines, shown as a model reading."
+      },
+      {
+        "template": "e1.signed_camera",
+        "text": "A signed record from a listed signer says a camera took this, but a scene can still be staged."
+      },
+      {
+        "template": "e1.c2pa.trusted.camera",
+        "text": "A record signed by a certificate on the C2PA Trust List says a camera took this, but a scene can still be staged."
+      },
+      {
+        "template": "e1.exif.camera",
+        "text": "The file's EXIF fields (Make and Model) name a camera, but they can be copied, so they don't show it took this."
+      },
+      {
+        "template": "e1.exif.software.plain",
+        "text": "The file's EXIF Software field names the last program that saved it, but not how the image was made."
+      },
+      {
+        "template": "e1.classifier.gate_failed",
+        "text": "A detector scored this under 0.01 out of 1, but our cut-off of 0.432 failed its test, so it is no concern."
+      },
+      {
+        "template": "e1.watermark.absent",
+        "text": "Second Look's own hidden mark is not here (125 of 256 bits match), and that says nothing about how this was made."
+      }
+    ],
+    "explanation_source": "rules",
+    "explanation_label": "Written by Second Look's rules from fixed templates, not by a model",
+    "image_text": [
+      "Welcome to",
+      "UTAH",
+      "LIFE ELEVATED"
+    ],
+    "facts": [],
+    "label": "model reading, not evidence",
+    "problems": [],
+    "model": "muse-glimmer",
+    "model_seconds": 24.05,
+    "seconds": 74.76,
+    "version": "15cdea61e3865415a1a3bb46484203910a0cc4fd",
+    "engine": "ladder",
+    "rungs": [
+      "c2pa",
+      "iptc",
+      "exif",
+      "classifier",
+      "watermark",
+      "context"
+    ],
+    "demo": false,
+    "glimmer": "ran"
+  }
+}

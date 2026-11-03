@@ -1,0 +1,117 @@
+{"file": "01-camera-pixel10pro-atlantic-sign.jpg", "marked": false, "case": "unmarked original", "matched": 122}
+{"file": "01-camera-pixel10pro-atlantic-sign.jpg", "marked": false, "case": "unmarked JPEG q70", "matched": 123}
+{"file": "01-camera-pixel10pro-atlantic-sign.jpg", "marked": false, "case": "unmarked resize 1080", "matched": 122}
+{"file": "01-camera-pixel10pro-atlantic-sign.jpg", "marked": true, "case": "as saved (PNG)", "matched": 255}
+{"file": "01-camera-pixel10pro-atlantic-sign.jpg", "marked": true, "case": "JPEG q90", "matched": 255}
+{"file": "01-camera-pixel10pro-atlantic-sign.jpg", "marked": true, "case": "JPEG q70", "matched": 255}
+{"file": "01-camera-pixel10pro-atlantic-sign.jpg", "marked": true, "case": "JPEG q50", "matched": 255}
+{"file": "01-camera-pixel10pro-atlantic-sign.jpg", "marked": true, "case": "resize long side 1080", "matched": 255}
+{"file": "01-camera-pixel10pro-atlantic-sign.jpg", "marked": true, "case": "resize 1080 then JPEG q70", "matched": 255}
+{"file": "01-camera-pixel10pro-atlantic-sign.jpg", "marked": true, "case": "resize long side 512", "matched": 255}
+{"file": "01-camera-pixel10pro-atlantic-sign.jpg", "marked": true, "case": "resize long side 256", "matched": 255}
+{"file": "01-camera-pixel10pro-atlantic-sign.jpg", "marked": true, "case": "centre crop 50%", "matched": 132}
+{"file": "01-camera-pixel10pro-atlantic-sign.jpg", "marked": true, "case": "rotate 90", "matched": 255}
+{"file": "02-camera-pixel10pro-utah-sign.jpg", "marked": false, "case": "unmarked original", "matched": 125}
+{"file": "02-camera-pixel10pro-utah-sign.jpg", "marked": false, "case": "unmarked JPEG q70", "matched": 130}
+{"file": "02-camera-pixel10pro-utah-sign.jpg", "marked": false, "case": "unmarked resize 1080", "matched": 127}
+{"file": "02-camera-pixel10pro-utah-sign.jpg", "marked": true, "case": "as saved (PNG)", "matched": 256}
+{"file": "02-camera-pixel10pro-utah-sign.jpg", "marked": true, "case": "JPEG q90", "matched": 256}
+{"file": "02-camera-pixel10pro-utah-sign.jpg", "marked": true, "case": "JPEG q70", "matched": 256}
+{"file": "02-camera-pixel10pro-utah-sign.jpg", "marked": true, "case": "JPEG q50", "matched": 256}
+{"file": "02-camera-pixel10pro-utah-sign.jpg", "marked": true, "case": "resize long side 1080", "matched": 256}
+{"file": "02-camera-pixel10pro-utah-sign.jpg", "marked": true, "case": "resize 1080 then JPEG q70", "matched": 256}
+{"file": "02-camera-pixel10pro-utah-sign.jpg", "marked": true, "case": "resize long side 512", "matched": 256}
+{"file": "02-camera-pixel10pro-utah-sign.jpg", "marked": true, "case": "resize long side 256", "matched": 256}
+{"file": "02-camera-pixel10pro-utah-sign.jpg", "marked": true, "case": "centre crop 50%", "matched": 124}
+{"file": "02-camera-pixel10pro-utah-sign.jpg", "marked": true, "case": "rotate 90", "matched": 255}
+{"file": "03-ai-firefly-mountain-landscape.jpg", "marked": false, "case": "unmarked original", "matched": 134}
+{"file": "03-ai-firefly-mountain-landscape.jpg", "marked": false, "case": "unmarked JPEG q70", "matched": 135}
+{"file": "03-ai-firefly-mountain-landscape.jpg", "marked": false, "case": "unmarked resize 1080", "matched": 132}
+{"file": "03-ai-firefly-mountain-landscape.jpg", "marked": true, "case": "as saved (PNG)", "matched": 256}
+{"file": "03-ai-firefly-mountain-landscape.jpg", "marked": true, "case": "JPEG q90", "matched": 256}
+{"file": "03-ai-firefly-mountain-landscape.jpg", "marked": true, "case": "JPEG q70", "matched": 256}
+{"file": "03-ai-firefly-mountain-landscape.jpg", "marked": true, "case": "JPEG q50", "matched": 256}
+{"file": "03-ai-firefly-mountain-landscape.jpg", "marked": true, "case": "resize long side 1080", "matched": 256}
+{"file": "03-ai-firefly-mountain-landscape.jpg", "marked": true, "case": "resize 1080 then JPEG q70", "matched": 256}
+{"file": "03-ai-firefly-mountain-landscape.jpg", "marked": true, "case": "resize long side 512", "matched": 256}
+{"file": "03-ai-firefly-mountain-landscape.jpg", "marked": true, "case": "resize long side 256", "matched": 256}
+{"file": "03-ai-firefly-mountain-landscape.jpg", "marked": true, "case": "centre crop 50%", "matched": 130}
+{"file": "03-ai-firefly-mountain-landscape.jpg", "marked": true, "case": "rotate 90", "matched": 256}
+{"file": "04-ai-firefly-typography-logo.jpg", "marked": false, "case": "unmarked original", "matched": 104}
+{"file": "04-ai-firefly-typography-logo.jpg", "marked": false, "case": "unmarked JPEG q70", "matched": 121}
+{"file": "04-ai-firefly-typography-logo.jpg", "marked": false, "case": "unmarked resize 1080", "matched": 107}
+{"file": "04-ai-firefly-typography-logo.jpg", "marked": true, "case": "as saved (PNG)", "matched": 256}
+{"file": "04-ai-firefly-typography-logo.jpg", "marked": true, "case": "JPEG q90", "matched": 256}
+{"file": "04-ai-firefly-typography-logo.jpg", "marked": true, "case": "JPEG q70", "matched": 256}
+{"file": "04-ai-firefly-typography-logo.jpg", "marked": true, "case": "JPEG q50", "matched": 256}
+{"file": "04-ai-firefly-typography-logo.jpg", "marked": true, "case": "resize long side 1080", "matched": 256}
+{"file": "04-ai-firefly-typography-logo.jpg", "marked": true, "case": "resize 1080 then JPEG q70", "matched": 255}
+{"file": "04-ai-firefly-typography-logo.jpg", "marked": true, "case": "resize long side 512", "matched": 256}
+{"file": "04-ai-firefly-typography-logo.jpg", "marked": true, "case": "resize long side 256", "matched": 256}
+{"file": "04-ai-firefly-typography-logo.jpg", "marked": true, "case": "centre crop 50%", "matched": 153}
+{"file": "04-ai-firefly-typography-logo.jpg", "marked": true, "case": "rotate 90", "matched": 256}
+{"file": "05-ai-edit-photoshop-firefly-bentley.jpg", "marked": false, "case": "unmarked original", "matched": 133}
+{"file": "05-ai-edit-photoshop-firefly-bentley.jpg", "marked": false, "case": "unmarked JPEG q70", "matched": 132}
+{"file": "05-ai-edit-photoshop-firefly-bentley.jpg", "marked": false, "case": "unmarked resize 1080", "matched": 133}
+{"file": "05-ai-edit-photoshop-firefly-bentley.jpg", "marked": true, "case": "as saved (PNG)", "matched": 256}
+{"file": "05-ai-edit-photoshop-firefly-bentley.jpg", "marked": true, "case": "JPEG q90", "matched": 256}
+{"file": "05-ai-edit-photoshop-firefly-bentley.jpg", "marked": true, "case": "JPEG q70", "matched": 256}
+{"file": "05-ai-edit-photoshop-firefly-bentley.jpg", "marked": true, "case": "JPEG q50", "matched": 256}
+{"file": "05-ai-edit-photoshop-firefly-bentley.jpg", "marked": true, "case": "resize long side 1080", "matched": 256}
+{"file": "05-ai-edit-photoshop-firefly-bentley.jpg", "marked": true, "case": "resize 1080 then JPEG q70", "matched": 256}
+{"file": "05-ai-edit-photoshop-firefly-bentley.jpg", "marked": true, "case": "resize long side 512", "matched": 256}
+{"file": "05-ai-edit-photoshop-firefly-bentley.jpg", "marked": true, "case": "resize long side 256", "matched": 256}
+{"file": "05-ai-edit-photoshop-firefly-bentley.jpg", "marked": true, "case": "centre crop 50%", "matched": 130}
+{"file": "05-ai-edit-photoshop-firefly-bentley.jpg", "marked": true, "case": "rotate 90", "matched": 255}
+{"file": "06-stripped-pixel10pro-atlantic-sign.jpg", "marked": false, "case": "unmarked original", "matched": 124}
+{"file": "06-stripped-pixel10pro-atlantic-sign.jpg", "marked": false, "case": "unmarked JPEG q70", "matched": 122}
+{"file": "06-stripped-pixel10pro-atlantic-sign.jpg", "marked": false, "case": "unmarked resize 1080", "matched": 123}
+{"file": "06-stripped-pixel10pro-atlantic-sign.jpg", "marked": true, "case": "as saved (PNG)", "matched": 255}
+{"file": "06-stripped-pixel10pro-atlantic-sign.jpg", "marked": true, "case": "JPEG q90", "matched": 255}
+{"file": "06-stripped-pixel10pro-atlantic-sign.jpg", "marked": true, "case": "JPEG q70", "matched": 256}
+{"file": "06-stripped-pixel10pro-atlantic-sign.jpg", "marked": true, "case": "JPEG q50", "matched": 255}
+{"file": "06-stripped-pixel10pro-atlantic-sign.jpg", "marked": true, "case": "resize long side 1080", "matched": 255}
+{"file": "06-stripped-pixel10pro-atlantic-sign.jpg", "marked": true, "case": "resize 1080 then JPEG q70", "matched": 255}
+{"file": "06-stripped-pixel10pro-atlantic-sign.jpg", "marked": true, "case": "resize long side 512", "matched": 255}
+{"file": "06-stripped-pixel10pro-atlantic-sign.jpg", "marked": true, "case": "resize long side 256", "matched": 255}
+{"file": "06-stripped-pixel10pro-atlantic-sign.jpg", "marked": true, "case": "centre crop 50%", "matched": 133}
+{"file": "06-stripped-pixel10pro-atlantic-sign.jpg", "marked": true, "case": "rotate 90", "matched": 255}
+{"file": "07-stripped-firefly-mountain-landscape.jpg", "marked": false, "case": "unmarked original", "matched": 135}
+{"file": "07-stripped-firefly-mountain-landscape.jpg", "marked": false, "case": "unmarked JPEG q70", "matched": 136}
+{"file": "07-stripped-firefly-mountain-landscape.jpg", "marked": false, "case": "unmarked resize 1080", "matched": 137}
+{"file": "07-stripped-firefly-mountain-landscape.jpg", "marked": true, "case": "as saved (PNG)", "matched": 256}
+{"file": "07-stripped-firefly-mountain-landscape.jpg", "marked": true, "case": "JPEG q90", "matched": 256}
+{"file": "07-stripped-firefly-mountain-landscape.jpg", "marked": true, "case": "JPEG q70", "matched": 256}
+{"file": "07-stripped-firefly-mountain-landscape.jpg", "marked": true, "case": "JPEG q50", "matched": 254}
+{"file": "07-stripped-firefly-mountain-landscape.jpg", "marked": true, "case": "resize long side 1080", "matched": 256}
+{"file": "07-stripped-firefly-mountain-landscape.jpg", "marked": true, "case": "resize 1080 then JPEG q70", "matched": 256}
+{"file": "07-stripped-firefly-mountain-landscape.jpg", "marked": true, "case": "resize long side 512", "matched": 256}
+{"file": "07-stripped-firefly-mountain-landscape.jpg", "marked": true, "case": "resize long side 256", "matched": 256}
+{"file": "07-stripped-firefly-mountain-landscape.jpg", "marked": true, "case": "centre crop 50%", "matched": 132}
+{"file": "07-stripped-firefly-mountain-landscape.jpg", "marked": true, "case": "rotate 90", "matched": 256}
+{"file": "08-iptc-ai-label-firefly-mountain-landscape.jpg", "marked": false, "case": "unmarked original", "matched": 135}
+{"file": "08-iptc-ai-label-firefly-mountain-landscape.jpg", "marked": false, "case": "unmarked JPEG q70", "matched": 136}
+{"file": "08-iptc-ai-label-firefly-mountain-landscape.jpg", "marked": false, "case": "unmarked resize 1080", "matched": 137}
+{"file": "08-iptc-ai-label-firefly-mountain-landscape.jpg", "marked": true, "case": "as saved (PNG)", "matched": 256}
+{"file": "08-iptc-ai-label-firefly-mountain-landscape.jpg", "marked": true, "case": "JPEG q90", "matched": 256}
+{"file": "08-iptc-ai-label-firefly-mountain-landscape.jpg", "marked": true, "case": "JPEG q70", "matched": 256}
+{"file": "08-iptc-ai-label-firefly-mountain-landscape.jpg", "marked": true, "case": "JPEG q50", "matched": 254}
+{"file": "08-iptc-ai-label-firefly-mountain-landscape.jpg", "marked": true, "case": "resize long side 1080", "matched": 256}
+{"file": "08-iptc-ai-label-firefly-mountain-landscape.jpg", "marked": true, "case": "resize 1080 then JPEG q70", "matched": 256}
+{"file": "08-iptc-ai-label-firefly-mountain-landscape.jpg", "marked": true, "case": "resize long side 512", "matched": 256}
+{"file": "08-iptc-ai-label-firefly-mountain-landscape.jpg", "marked": true, "case": "resize long side 256", "matched": 256}
+{"file": "08-iptc-ai-label-firefly-mountain-landscape.jpg", "marked": true, "case": "centre crop 50%", "matched": 132}
+{"file": "08-iptc-ai-label-firefly-mountain-landscape.jpg", "marked": true, "case": "rotate 90", "matched": 256}
+{"file": "09-iptc-ai-label-firefly-typography-logo.jpg", "marked": false, "case": "unmarked original", "matched": 96}
+{"file": "09-iptc-ai-label-firefly-typography-logo.jpg", "marked": false, "case": "unmarked JPEG q70", "matched": 115}
+{"file": "09-iptc-ai-label-firefly-typography-logo.jpg", "marked": false, "case": "unmarked resize 1080", "matched": 100}
+{"file": "09-iptc-ai-label-firefly-typography-logo.jpg", "marked": true, "case": "as saved (PNG)", "matched": 256}
+{"file": "09-iptc-ai-label-firefly-typography-logo.jpg", "marked": true, "case": "JPEG q90", "matched": 256}
+{"file": "09-iptc-ai-label-firefly-typography-logo.jpg", "marked": true, "case": "JPEG q70", "matched": 256}
+{"file": "09-iptc-ai-label-firefly-typography-logo.jpg", "marked": true, "case": "JPEG q50", "matched": 256}
+{"file": "09-iptc-ai-label-firefly-typography-logo.jpg", "marked": true, "case": "resize long side 1080", "matched": 256}
+{"file": "09-iptc-ai-label-firefly-typography-logo.jpg", "marked": true, "case": "resize 1080 then JPEG q70", "matched": 255}
+{"file": "09-iptc-ai-label-firefly-typography-logo.jpg", "marked": true, "case": "resize long side 512", "matched": 256}
+{"file": "09-iptc-ai-label-firefly-typography-logo.jpg", "marked": true, "case": "resize long side 256", "matched": 256}
+{"file": "09-iptc-ai-label-firefly-typography-logo.jpg", "marked": true, "case": "centre crop 50%", "matched": 152}
+{"file": "09-iptc-ai-label-firefly-typography-logo.jpg", "marked": true, "case": "rotate 90", "matched": 256}

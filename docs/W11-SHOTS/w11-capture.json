@@ -1,0 +1,62 @@
+{
+ "offHost": [],
+ "states": {
+  "2": {
+   "bar": "street-canon.jpg · with its caption\n\nCheck another",
+   "answer": "One reason to look closer",
+   "reason": "The caption says iPhone 15 Pro. The file's own EXIF camera make says Canon, model Canon EOS R5.",
+   "meaning": "Clues worth a closer look: unsigned labels or signals, or a signed record that failed its checks. A reason to check further, not a verdict.",
+   "summaryHidden": true,
+   "explain": "Second Look found 1 reason to look closer, but on its own it does not show how this was made.",
+   "reasonTop": 449,
+   "rungs": "This answer ran 6 checks on the file: C2PA, IPTC, EXIF, Classifier, Watermark, Caption context.",
+   "clues": "CAPTION CONTEXT\nUNSIGNED METADATA\nREASON TO LOOK CLOSER\n\nThe caption says iPhone 15 Pro. The file's own EXIF camera make says Canon, model Canon EOS R5.\n\nPROVES\nThe caption and the file's facts disagree.\nDOES NOT PROVE\nMetadata can be wrong, edited or stripped. A disagreement doesn't show the picture is fake, and agreement doesn't show how the picture was made.\nEXIF\nUNSIGNED METADATA\n\nEXIF names a camera: Canon EOS R5.\n\nPROVES\nThe file carries camera fields, as a camera or an editor wrote them.\nDOES NOT PROVE\nThat this camera took this picture: EXIF is unsigned and can be copied onto any image, including an AI-made one.\nCLASSIFIER\nSIGNAL\n\nCommunity Forensics detector score 0.001 (0 to 1). No threshold has been frozen yet, so this score is shown for information only.\n\nPROVES\nNothing yet: no frozen threshold.\nDOES NOT PROVE\nIt is not proof that the image was made by AI, or by a camera. The model can be wrong, especially on generators it never saw, heavy compression, screenshots and edited photos.",
+   "quiet": "Checked, nothing found (1)",
+   "scrollY": 163,
+   "answerTop": 138
+  },
+  "3": {
+   "time": "Running for 8 s. In the test run a deep check took 53 to 126 seconds an image. It stops itself at 300 seconds.",
+   "status": "Deep check running with Muse Glimmer on this computer."
+  },
+  "4": {
+   "ms": 115373,
+   "status": "Deep check done in 126 s. Muse Glimmer called 5 of Second Look's checks, listed under “Checks Muse Glimmer called”. Fixed rules gave the answer, not the model. A published fact-check was found; it is shown under the answer.",
+   "factcheck": "PUBLISHED FACT-CHECK FOUND\n\n“False”\nRating in the publisher's own words: politifact.com, a fact-checker on the IFCN list, on the claim “Photo shows Gatlinburg, Tennessee, flooded on Sept. 30, 2024.” · 3 Oct 2024 · Read it at politifact.com\n\nDoes not prove That the typed claim is the claim they reviewed, or that the rating still holds. Second Look gives no true or false verdict of its own.",
+   "answer": "Can't tell",
+   "rungs": "This answer ran 6 checks on the file: C2PA, IPTC, EXIF, Classifier, Watermark, Caption context.",
+   "lines": "",
+   "cards": "politifact.com reviewed the claim “Photo shows Gatlinburg, Tennessee, flooded on Sept. 30, 2024.” and rated it “False” on 2024-10-03: https://www.politifact.com/factchecks/2024/oct/03/viral-image/fabricated-photo-appears-to-show-gatlinburg-tennes/ The feed lists the author as “PolitiFact”. Search words came from a model reading of your caption; check them.\n\nProves\nThat politifact.com, a fact-checker on the IFCN list, published this rating on a claim that shares 8 of your 8 key words and is 8 key words long itself. It is not necessarily the claim you typed.\nDoes not prove\nThat the typed claim is the claim they reviewed, or that the rating still holds. Second Look gives no true or false verdict of its own.",
+   "summaryHidden": true,
+   "explain": "Second Look can't tell how this was made, and finding nothing is not evidence either way.",
+   "stepsTitle": "Checks Muse Glimmer called (5)",
+   "cantTell": 1,
+   "rerun": "The same checks, run again by the deep check (2)",
+   "focus": "fc-title"
+  },
+  "5": {
+   "status": "Muse Glimmer is not set up on this computer, so there was no deep check."
+  },
+  "1b": {
+   "status": "The caption is over 2,000 characters, so street-canon.jpg was not checked. Shorten the caption, then check again.",
+   "error": "That caption is over 2,000 characters. Shorten it to check the image with it.",
+   "count": "2,001 of 2,000 characters."
+  },
+  "5b": {
+   "status": "The investigator is off on this page.",
+   "answer": "Can't tell"
+  },
+  "2b": {
+   "answer": "One reason to look closer",
+   "rungs": "This answer ran 5 checks on the file: C2PA, IPTC, EXIF, Classifier, Caption context. 1 check could not run: Watermark.",
+   "rungsClass": "rungs warn",
+   "rungsColour": "rgb(158, 69, 38)",
+   "reasonTagColour": "rgb(158, 69, 38)",
+   "badgeColour": "rgb(158, 69, 38)"
+  },
+  "2c": {
+   "missing": "Missing: this card did not say what it does not prove. Treat it as unchecked.",
+   "missingColour": "rgb(158, 69, 38)"
+  }
+ }
+}

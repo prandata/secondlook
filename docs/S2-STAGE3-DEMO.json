@@ -1,0 +1,404 @@
+[
+ {
+  "file": "01-camera-pixel10pro-atlantic-sign.jpg",
+  "sha256": "12583a7485499524f93c0f06b9a74cd3d5f7fdb38841e3cfc930695a8b08977a",
+  "answer": "signed_camera",
+  "answer_s1_hardening_614e116": "signed_camera",
+  "expected": "signed_camera",
+  "ok": true,
+  "no_list_read": [
+   "Valid",
+   [],
+   [
+    "timeStamp.untrusted"
+   ]
+  ],
+  "c2pa": {
+   "validation_state": "Trusted",
+   "valid": true,
+   "trusted": true,
+   "trusted_by": "official",
+   "failures": [],
+   "signer_issuer": "Google LLC",
+   "signer_common_name": "Pixel Camera",
+   "sign_time": "2026-09-06T14:51:12+00:00",
+   "source_class": "camera"
+  },
+  "c2pa_strength": "signed",
+  "trust_lists": [
+   {
+    "name": "C2PA Trust List",
+    "source": "https://raw.githubusercontent.com/c2pa-org/conformance-public/47009eedfe6721edd0ce3e69b89c1101cd6f03e5/trust-list/C2PA-TRUST-LIST.pem",
+    "date": "2026-10-17",
+    "sha256": "b3949271a07b007e92ef1d18050b55388f5e0d2686a16fd864176c48421af8ae",
+    "id": "official",
+    "loaded": true
+   },
+   {
+    "name": "C2PA interim trust list",
+    "source": "https://contentcredentials.org/trust/",
+    "date": "2026-10-28",
+    "files": {
+     "anchors.pem": "db57e50b9bd4e4c786cbb91f38fd85e2af6a9d5412438a8cddcc42688df07ae5",
+     "allowed.sha256.txt": "3597b20c9c20a0daadc7fab0d8c63534bd333ec6a715ef7117c7a4588caa15bb"
+    },
+    "id": "interim",
+    "loaded": true
+   }
+  ],
+  "findings": [
+   "[c2pa/signed] C2PA manifest signed by Google LLC on 2026-09-06 via Google C2PA SDK for Android 912750169:936816820; it declares a camera capture (computationalCapture). The signer is on the C2PA Trust List (2026-10-17).",
+   "[exif/metadata] EXIF names a camera: Google Pixel 10 Pro, dated 2026:09:06 10:51:09.",
+   "[exif/metadata] EXIF Software field names 'HDR+ 1.0.936816820zd'."
+  ]
+ },
+ {
+  "file": "02-camera-pixel10pro-utah-sign.jpg",
+  "sha256": "fbb1bb7183dc018e092ec3dda7a565543e605f25fe78d21818dbf61a888800d5",
+  "answer": "signed_camera",
+  "answer_s1_hardening_614e116": "signed_camera",
+  "expected": "signed_camera",
+  "ok": true,
+  "no_list_read": [
+   "Invalid",
+   [
+    "signingCredential.expired"
+   ],
+   [
+    "timeStamp.untrusted"
+   ]
+  ],
+  "c2pa": {
+   "validation_state": "Trusted",
+   "valid": true,
+   "trusted": true,
+   "trusted_by": "official",
+   "failures": [],
+   "signer_issuer": "Google LLC",
+   "signer_common_name": "Pixel Camera",
+   "sign_time": "2025-12-30T18:04:30+00:00",
+   "source_class": "camera"
+  },
+  "c2pa_strength": "signed",
+  "trust_lists": [
+   {
+    "name": "C2PA Trust List",
+    "source": "https://raw.githubusercontent.com/c2pa-org/conformance-public/47009eedfe6721edd0ce3e69b89c1101cd6f03e5/trust-list/C2PA-TRUST-LIST.pem",
+    "date": "2026-10-17",
+    "sha256": "b3949271a07b007e92ef1d18050b55388f5e0d2686a16fd864176c48421af8ae",
+    "id": "official",
+    "loaded": true
+   },
+   {
+    "name": "C2PA interim trust list",
+    "source": "https://contentcredentials.org/trust/",
+    "date": "2026-10-28",
+    "files": {
+     "anchors.pem": "db57e50b9bd4e4c786cbb91f38fd85e2af6a9d5412438a8cddcc42688df07ae5",
+     "allowed.sha256.txt": "3597b20c9c20a0daadc7fab0d8c63534bd333ec6a715ef7117c7a4588caa15bb"
+    },
+    "id": "interim",
+    "loaded": true
+   }
+  ],
+  "findings": [
+   "[c2pa/signed] C2PA manifest signed by Google LLC on 2025-12-30 via Google C2PA SDK for Android 824699194:839895461; it declares a camera capture (computationalCapture). The signer is on the C2PA Trust List (2026-10-17).",
+   "[exif/metadata] EXIF names a camera: Google Pixel 10 Pro, dated 2025:12:30 11:04:29.",
+   "[exif/metadata] EXIF Software field names 'HDR+ 1.0.839895461zd'."
+  ]
+ },
+ {
+  "file": "03-ai-firefly-mountain-landscape.jpg",
+  "sha256": "4413739275382578d694dd02817c79c3714dafc6e5aa77ae8e80f59161618338",
+  "answer": "signed_ai",
+  "answer_s1_hardening_614e116": "signed_ai",
+  "expected": "signed_ai",
+  "ok": true,
+  "no_list_read": [
+   "Valid",
+   [],
+   []
+  ],
+  "c2pa": {
+   "validation_state": "Trusted",
+   "valid": true,
+   "trusted": true,
+   "trusted_by": "interim",
+   "failures": [],
+   "signer_issuer": "Adobe Inc.",
+   "signer_common_name": "firefly-prod",
+   "sign_time": "2024-06-14T23:46:22+00:00",
+   "source_class": "ai"
+  },
+  "c2pa_strength": "signed",
+  "trust_lists": [
+   {
+    "name": "C2PA Trust List",
+    "source": "https://raw.githubusercontent.com/c2pa-org/conformance-public/47009eedfe6721edd0ce3e69b89c1101cd6f03e5/trust-list/C2PA-TRUST-LIST.pem",
+    "date": "2026-10-17",
+    "sha256": "b3949271a07b007e92ef1d18050b55388f5e0d2686a16fd864176c48421af8ae",
+    "id": "official",
+    "loaded": true
+   },
+   {
+    "name": "C2PA interim trust list",
+    "source": "https://contentcredentials.org/trust/",
+    "date": "2026-10-28",
+    "files": {
+     "anchors.pem": "db57e50b9bd4e4c786cbb91f38fd85e2af6a9d5412438a8cddcc42688df07ae5",
+     "allowed.sha256.txt": "3597b20c9c20a0daadc7fab0d8c63534bd333ec6a715ef7117c7a4588caa15bb"
+    },
+    "id": "interim",
+    "loaded": true
+   }
+  ],
+  "findings": [
+   "[c2pa/signed] C2PA manifest signed by Adobe Inc. on 2024-06-14 via Adobe_Firefly adobe_c2pa/0.10.1 c2pa-rs/0.31.1; it declares it was made with generative AI (trainedAlgorithmicMedia). The signer is on the C2PA interim trust list, which C2PA describes as temporary."
+  ]
+ },
+ {
+  "file": "04-ai-firefly-typography-logo.jpg",
+  "sha256": "5550fa2572d435234d6a750ce93b21a711cccd9c650dd1cdd6d400fb1351b3b6",
+  "answer": "signed_ai",
+  "answer_s1_hardening_614e116": "signed_ai",
+  "expected": "signed_ai",
+  "ok": true,
+  "no_list_read": [
+   "Valid",
+   [],
+   []
+  ],
+  "c2pa": {
+   "validation_state": "Trusted",
+   "valid": true,
+   "trusted": true,
+   "trusted_by": "interim",
+   "failures": [],
+   "signer_issuer": "Adobe Inc.",
+   "signer_common_name": "firefly-prod",
+   "sign_time": "2024-06-14T23:40:20+00:00",
+   "source_class": "ai"
+  },
+  "c2pa_strength": "signed",
+  "trust_lists": [
+   {
+    "name": "C2PA Trust List",
+    "source": "https://raw.githubusercontent.com/c2pa-org/conformance-public/47009eedfe6721edd0ce3e69b89c1101cd6f03e5/trust-list/C2PA-TRUST-LIST.pem",
+    "date": "2026-10-17",
+    "sha256": "b3949271a07b007e92ef1d18050b55388f5e0d2686a16fd864176c48421af8ae",
+    "id": "official",
+    "loaded": true
+   },
+   {
+    "name": "C2PA interim trust list",
+    "source": "https://contentcredentials.org/trust/",
+    "date": "2026-10-28",
+    "files": {
+     "anchors.pem": "db57e50b9bd4e4c786cbb91f38fd85e2af6a9d5412438a8cddcc42688df07ae5",
+     "allowed.sha256.txt": "3597b20c9c20a0daadc7fab0d8c63534bd333ec6a715ef7117c7a4588caa15bb"
+    },
+    "id": "interim",
+    "loaded": true
+   }
+  ],
+  "findings": [
+   "[c2pa/signed] C2PA manifest signed by Adobe Inc. on 2024-06-14 via Adobe_Firefly adobe_c2pa/0.10.1 c2pa-rs/0.31.1; it declares it was made with generative AI (trainedAlgorithmicMedia). The signer is on the C2PA interim trust list, which C2PA describes as temporary."
+  ]
+ },
+ {
+  "file": "05-ai-edit-photoshop-firefly-bentley.jpg",
+  "sha256": "cb5a122e070e7601b222b3ffb39d5914e4db27d1dcb94d4c4a623e0f6adca8af",
+  "answer": "signed_ai",
+  "answer_s1_hardening_614e116": "signed_ai",
+  "expected": "signed_ai",
+  "ok": true,
+  "no_list_read": [
+   "Valid",
+   [],
+   []
+  ],
+  "c2pa": {
+   "validation_state": "Trusted",
+   "valid": true,
+   "trusted": true,
+   "trusted_by": "interim",
+   "failures": [],
+   "signer_issuer": "Adobe Inc.",
+   "signer_common_name": "Adobe C2PA",
+   "sign_time": "2024-12-14T19:23:25+00:00",
+   "source_class": "ai"
+  },
+  "c2pa_strength": "signed",
+  "trust_lists": [
+   {
+    "name": "C2PA Trust List",
+    "source": "https://raw.githubusercontent.com/c2pa-org/conformance-public/47009eedfe6721edd0ce3e69b89c1101cd6f03e5/trust-list/C2PA-TRUST-LIST.pem",
+    "date": "2026-10-17",
+    "sha256": "b3949271a07b007e92ef1d18050b55388f5e0d2686a16fd864176c48421af8ae",
+    "id": "official",
+    "loaded": true
+   },
+   {
+    "name": "C2PA interim trust list",
+    "source": "https://contentcredentials.org/trust/",
+    "date": "2026-10-28",
+    "files": {
+     "anchors.pem": "db57e50b9bd4e4c786cbb91f38fd85e2af6a9d5412438a8cddcc42688df07ae5",
+     "allowed.sha256.txt": "3597b20c9c20a0daadc7fab0d8c63534bd333ec6a715ef7117c7a4588caa15bb"
+    },
+    "id": "interim",
+    "loaded": true
+   }
+  ],
+  "findings": [
+   "[c2pa/signed] C2PA manifest signed by Adobe Inc. on 2024-12-14 via Adobe_Photoshop/26.1.0 adobe_c2pa/0.12.2 c2pa-rs/0.32.5; it declares it was made with generative AI (compositeWithTrainedAlgorithmicMedia). The signer is on the C2PA interim trust list, which C2PA describes as temporary.",
+   "[exif/metadata] EXIF names a camera: NIKON CORPORATION NIKON D4, dated 2017:09:19 10:32:08.",
+   "[exif/metadata] EXIF Software field names 'Adobe Photoshop 26.1 (Windows)'."
+  ]
+ },
+ {
+  "file": "06-stripped-pixel10pro-atlantic-sign.jpg",
+  "sha256": "135f4578afd3a0fcd3c1d0f254d42a0d66e5a733954b913f39e2a8974522257b",
+  "answer": "cant_tell",
+  "answer_s1_hardening_614e116": "cant_tell",
+  "expected": "cant_tell",
+  "ok": true,
+  "no_list_read": [
+   "no manifest"
+  ],
+  "c2pa": null,
+  "c2pa_strength": null,
+  "trust_lists": [
+   {
+    "name": "C2PA Trust List",
+    "source": "https://raw.githubusercontent.com/c2pa-org/conformance-public/47009eedfe6721edd0ce3e69b89c1101cd6f03e5/trust-list/C2PA-TRUST-LIST.pem",
+    "date": "2026-10-17",
+    "sha256": "b3949271a07b007e92ef1d18050b55388f5e0d2686a16fd864176c48421af8ae",
+    "id": "official",
+    "loaded": true
+   },
+   {
+    "name": "C2PA interim trust list",
+    "source": "https://contentcredentials.org/trust/",
+    "date": "2026-10-28",
+    "files": {
+     "anchors.pem": "db57e50b9bd4e4c786cbb91f38fd85e2af6a9d5412438a8cddcc42688df07ae5",
+     "allowed.sha256.txt": "3597b20c9c20a0daadc7fab0d8c63534bd333ec6a715ef7117c7a4588caa15bb"
+    },
+    "id": "interim",
+    "loaded": true
+   }
+  ],
+  "findings": []
+ },
+ {
+  "file": "07-stripped-firefly-mountain-landscape.jpg",
+  "sha256": "e7828da31f47369aeaa12e62227f1f37ff9779ba54e747cce02fef87e82502b6",
+  "answer": "cant_tell",
+  "answer_s1_hardening_614e116": "cant_tell",
+  "expected": "cant_tell",
+  "ok": true,
+  "no_list_read": [
+   "no manifest"
+  ],
+  "c2pa": null,
+  "c2pa_strength": null,
+  "trust_lists": [
+   {
+    "name": "C2PA Trust List",
+    "source": "https://raw.githubusercontent.com/c2pa-org/conformance-public/47009eedfe6721edd0ce3e69b89c1101cd6f03e5/trust-list/C2PA-TRUST-LIST.pem",
+    "date": "2026-10-17",
+    "sha256": "b3949271a07b007e92ef1d18050b55388f5e0d2686a16fd864176c48421af8ae",
+    "id": "official",
+    "loaded": true
+   },
+   {
+    "name": "C2PA interim trust list",
+    "source": "https://contentcredentials.org/trust/",
+    "date": "2026-10-28",
+    "files": {
+     "anchors.pem": "db57e50b9bd4e4c786cbb91f38fd85e2af6a9d5412438a8cddcc42688df07ae5",
+     "allowed.sha256.txt": "3597b20c9c20a0daadc7fab0d8c63534bd333ec6a715ef7117c7a4588caa15bb"
+    },
+    "id": "interim",
+    "loaded": true
+   }
+  ],
+  "findings": []
+ },
+ {
+  "file": "08-iptc-ai-label-firefly-mountain-landscape.jpg",
+  "sha256": "70f5070988eeca4669ca22f512e531938e5ad54b0cc6fc4d2001e53a289d5936",
+  "answer": "concerns",
+  "answer_s1_hardening_614e116": "concerns",
+  "expected": "concerns",
+  "ok": true,
+  "no_list_read": [
+   "no manifest"
+  ],
+  "c2pa": null,
+  "c2pa_strength": null,
+  "trust_lists": [
+   {
+    "name": "C2PA Trust List",
+    "source": "https://raw.githubusercontent.com/c2pa-org/conformance-public/47009eedfe6721edd0ce3e69b89c1101cd6f03e5/trust-list/C2PA-TRUST-LIST.pem",
+    "date": "2026-10-17",
+    "sha256": "b3949271a07b007e92ef1d18050b55388f5e0d2686a16fd864176c48421af8ae",
+    "id": "official",
+    "loaded": true
+   },
+   {
+    "name": "C2PA interim trust list",
+    "source": "https://contentcredentials.org/trust/",
+    "date": "2026-10-28",
+    "files": {
+     "anchors.pem": "db57e50b9bd4e4c786cbb91f38fd85e2af6a9d5412438a8cddcc42688df07ae5",
+     "allowed.sha256.txt": "3597b20c9c20a0daadc7fab0d8c63534bd333ec6a715ef7117c7a4588caa15bb"
+    },
+    "id": "interim",
+    "loaded": true
+   }
+  ],
+  "findings": [
+   "[iptc/metadata] Unsigned IPTC metadata says it was made with generative AI (DigitalSourceType: trainedAlgorithmicMedia)."
+  ]
+ },
+ {
+  "file": "09-iptc-ai-label-firefly-typography-logo.jpg",
+  "sha256": "52d331a1b22c9444241a4b28714614ca7b48578e7edad83215661d68ead44f50",
+  "answer": "concerns",
+  "answer_s1_hardening_614e116": "concerns",
+  "expected": "concerns",
+  "ok": true,
+  "no_list_read": [
+   "no manifest"
+  ],
+  "c2pa": null,
+  "c2pa_strength": null,
+  "trust_lists": [
+   {
+    "name": "C2PA Trust List",
+    "source": "https://raw.githubusercontent.com/c2pa-org/conformance-public/47009eedfe6721edd0ce3e69b89c1101cd6f03e5/trust-list/C2PA-TRUST-LIST.pem",
+    "date": "2026-10-17",
+    "sha256": "b3949271a07b007e92ef1d18050b55388f5e0d2686a16fd864176c48421af8ae",
+    "id": "official",
+    "loaded": true
+   },
+   {
+    "name": "C2PA interim trust list",
+    "source": "https://contentcredentials.org/trust/",
+    "date": "2026-10-28",
+    "files": {
+     "anchors.pem": "db57e50b9bd4e4c786cbb91f38fd85e2af6a9d5412438a8cddcc42688df07ae5",
+     "allowed.sha256.txt": "3597b20c9c20a0daadc7fab0d8c63534bd333ec6a715ef7117c7a4588caa15bb"
+    },
+    "id": "interim",
+    "loaded": true
+   }
+  ],
+  "findings": [
+   "[iptc/metadata] Unsigned IPTC metadata says it was made with generative AI (DigitalSourceType: trainedAlgorithmicMedia).",
+   "[iptc/metadata] Unsigned IPTC metadata names the AI system used: Adobe Firefly."
+  ]
+ }
+]

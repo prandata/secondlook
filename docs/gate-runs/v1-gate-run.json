@@ -1,0 +1,32 @@
+{
+  "accepted_files": [
+    {
+      "complete": true,
+      "name": "ACCEPTED-v1-final.json",
+      "schema": "second-look-l4-accepted/1",
+      "sha256": "e3da8658293fc5fc8dbfe5badf8ebc345b74549b5b759e2732cc4ea3c63a480e",
+      "splits": [
+        "dev",
+        "test"
+      ]
+    }
+  ],
+  "accepted_sha256": "e3da8658293fc5fc8dbfe5badf8ebc345b74549b5b759e2732cc4ea3c63a480e",
+  "finished_at": "2026-10-28T18:01:32Z",
+  "gate_arms": [
+    "original",
+    "format_matched"
+  ],
+  "harness_exit_code": 3,
+  "l4_lock_sha256": "64af27d17f6780bc56a914292a1b3f3420ac986f9160fee16104f0405c200fd1",
+  "predictions_written": false,
+  "reasons": [
+    "dev split: 96 real and 131 AI accepted units, below the floor of 100 real and 100 AI the threshold must be frozen on"
+  ],
+  "run_id": "gate-20261028-180131",
+  "screen_config_sha256": "4c4807c05cb396607b542b5983b0ddb50b3b0ec6fadad381745e9bb5423b6965",
+  "secondlook_commit": "26eaae33d1f333c175ff45e36a56abed760b62ed",
+  "started_at": "2026-10-28T18:01:31Z",
+  "status": "INVALID",
+  "synthetic": false
+}

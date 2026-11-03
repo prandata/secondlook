@@ -1,0 +1,226 @@
+{
+  "run_at_utc": "2026-10-28T08:02:53Z",
+  "trimmed": "Trimmed 28 Oct 2026 (DAT-869 fix round on a reviewer FAIL @ 4a0a5fd). Removed: the captions, which ran the superseded free-text claim path (for the extractive path see docs/M1-GLIMMER-CAPTION-SMOKE.json), and each sample's explanation and the N3 guard path, because model-written explanations are retired. The on-image readings, S6 lookups, model file and egress are as recorded. total_seconds and egress cover the whole run, removed parts included.",
+  "machine": "macOS-26.6.2-arm64-arm-64bit",
+  "server": {
+    "model": "muse-glimmer",
+    "vision": true
+  },
+  "model_file": {
+    "path": "<home>/.cache/secondlook/models/meta-models/Muse-Glimmer-30B-GGUF@b44f1072cf75e918a1b82a3a17b45c4389b076e7/Muse-Glimmer-30B-KQuant-17GB-Q4_K_M.gguf",
+    "bytes": 16756683904
+  },
+  "url": "http://127.0.0.1:8082",
+  "reasoning_strength": "low",
+  "total_seconds": 1058.0,
+  "egress": {
+    "pid": 60885,
+    "samples": 490,
+    "loopback_lines": 960,
+    "non_loopback_lines": 0,
+    "log": "<home>/.cache/secondlook/glimmer/egress-8082-20261028T074515Z.log",
+    "exit_code": 0
+  },
+  "samples": [
+    {
+      "file": "01-camera-pixel10pro-atlantic-sign.jpg",
+      "answer": "signed_camera",
+      "image_text": {
+        "lines": [
+          "Welcome to",
+          "Atlantic",
+          "Living by the Sea",
+          "Settled 1740",
+          "Inc 1905"
+        ],
+        "dropped": [],
+        "problems": [],
+        "redacted": [],
+        "label": "model reading, not evidence",
+        "seconds": 25.61,
+        "prompt_tokens": 4147
+      },
+      "s6_query": "Welcome to Atlantic Living by the Sea Settled 1740 Inc 1905",
+      "s6": {
+        "status": "none",
+        "message": "No existing fact-check found.",
+        "matches": [],
+        "cards": []
+      }
+    },
+    {
+      "file": "02-camera-pixel10pro-utah-sign.jpg",
+      "answer": "signed_camera",
+      "image_text": {
+        "lines": [
+          "Welcome to",
+          "UTAH",
+          "LIFE ELEVATED"
+        ],
+        "dropped": [],
+        "problems": [],
+        "redacted": [],
+        "label": "model reading, not evidence",
+        "seconds": 37.67,
+        "prompt_tokens": 4147
+      },
+      "s6_query": "Welcome to UTAH LIFE ELEVATED",
+      "s6": {
+        "status": "none",
+        "message": "No existing fact-check found.",
+        "matches": [],
+        "cards": []
+      }
+    },
+    {
+      "file": "03-ai-firefly-mountain-landscape.jpg",
+      "answer": "signed_ai",
+      "image_text": {
+        "lines": [],
+        "dropped": [],
+        "problems": [],
+        "redacted": [],
+        "label": "model reading, not evidence",
+        "seconds": 29.61,
+        "prompt_tokens": 4228
+      },
+      "s6_query": null,
+      "s6": {
+        "status": "not looked up",
+        "matches": []
+      }
+    },
+    {
+      "file": "04-ai-firefly-typography-logo.jpg",
+      "answer": "signed_ai",
+      "image_text": {
+        "lines": [
+          "ADBE",
+          "FIRLE"
+        ],
+        "dropped": [],
+        "problems": [],
+        "redacted": [],
+        "label": "model reading, not evidence",
+        "seconds": 41.71,
+        "prompt_tokens": 4228
+      },
+      "s6_query": "ADBE FIRLE",
+      "s6": {
+        "status": "none",
+        "message": "No existing fact-check found.",
+        "matches": [],
+        "cards": []
+      }
+    },
+    {
+      "file": "05-ai-edit-photoshop-firefly-bentley.jpg",
+      "answer": "signed_ai",
+      "image_text": {
+        "lines": [
+          "[number plate removed]"
+        ],
+        "dropped": [],
+        "problems": [
+          "1 personal detail(s) removed: number plate"
+        ],
+        "redacted": [
+          "number plate"
+        ],
+        "label": "model reading, not evidence",
+        "seconds": 86.79,
+        "prompt_tokens": 4147
+      },
+      "s6_query": null,
+      "s6": {
+        "status": "not looked up",
+        "matches": []
+      }
+    },
+    {
+      "file": "06-stripped-pixel10pro-atlantic-sign.jpg",
+      "answer": "cant_tell",
+      "image_text": {
+        "lines": [
+          "Welcome to",
+          "Atlantic",
+          "Living by the Sea",
+          "Settled 1740",
+          "Inc 1905"
+        ],
+        "dropped": [],
+        "problems": [],
+        "redacted": [],
+        "label": "model reading, not evidence",
+        "seconds": 47.79,
+        "prompt_tokens": 4147
+      },
+      "s6_query": "Welcome to Atlantic Living by the Sea Settled 1740 Inc 1905",
+      "s6": {
+        "status": "none",
+        "message": "No existing fact-check found.",
+        "matches": [],
+        "cards": []
+      }
+    },
+    {
+      "file": "07-stripped-firefly-mountain-landscape.jpg",
+      "answer": "cant_tell",
+      "image_text": {
+        "lines": [],
+        "dropped": [],
+        "problems": [],
+        "redacted": [],
+        "label": "model reading, not evidence",
+        "seconds": 56.02,
+        "prompt_tokens": 4228
+      },
+      "s6_query": null,
+      "s6": {
+        "status": "not looked up",
+        "matches": []
+      }
+    },
+    {
+      "file": "08-iptc-ai-label-firefly-mountain-landscape.jpg",
+      "answer": "concerns",
+      "image_text": {
+        "lines": [],
+        "dropped": [],
+        "problems": [],
+        "redacted": [],
+        "label": "model reading, not evidence",
+        "seconds": 38.91,
+        "prompt_tokens": 4228
+      },
+      "s6_query": null,
+      "s6": {
+        "status": "not looked up",
+        "matches": []
+      }
+    },
+    {
+      "file": "09-iptc-ai-label-firefly-typography-logo.jpg",
+      "answer": "concerns",
+      "image_text": {
+        "lines": [
+          "ADBE",
+          "FIRLE"
+        ],
+        "dropped": [],
+        "problems": [],
+        "redacted": [],
+        "label": "model reading, not evidence",
+        "seconds": 33.08,
+        "prompt_tokens": 4228
+      },
+      "s6_query": "ADBE FIRLE",
+      "s6": {
+        "status": "none",
+        "message": "No existing fact-check found.",
+        "matches": [],
+        "cards": []
+      }
+    }
+  ]
+}

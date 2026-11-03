@@ -1,0 +1,78 @@
+{
+ "offHost": [],
+ "states": {
+  "2b": {
+   "answer": "One reason to look closer",
+   "text": "This answer ran 5 checks on the file: C2PA, IPTC, EXIF, Classifier, Caption context.\n1 check could not run: Watermark (not installed).",
+   "paragraphClass": "rungs",
+   "paragraph": {
+    "color": "rgb(95, 99, 103)",
+    "weight": "400",
+    "display": "block"
+   },
+   "ranSpan": {
+    "color": "rgb(95, 99, 103)",
+    "weight": "400",
+    "display": "inline"
+   },
+   "failedSpan": {
+    "color": "rgb(158, 69, 38)",
+    "weight": "600",
+    "display": "block"
+   },
+   "failedTop": [
+    515,
+    537
+   ]
+  },
+  "2d": {
+   "serverWhy": [
+    "not installed"
+   ],
+   "serverFailed": [
+    "watermark"
+   ],
+   "text": "This answer ran 5 checks on the file: C2PA, IPTC, EXIF, Classifier, Caption context.\n1 check could not run: Watermark. The cause is in the server log.",
+   "paragraphClass": "rungs",
+   "paragraph": {
+    "color": "rgb(95, 99, 103)",
+    "weight": "400",
+    "display": "block"
+   },
+   "ranSpan": {
+    "color": "rgb(95, 99, 103)",
+    "weight": "400",
+    "display": "inline"
+   },
+   "failedSpan": {
+    "color": "rgb(158, 69, 38)",
+    "weight": "600",
+    "display": "block"
+   },
+   "failedTop": [
+    515,
+    537
+   ]
+  },
+  "2e": {
+   "serverAnswer": "concerns",
+   "answer": "One reason to look closer",
+   "status": "Saved street-canon.jpg.receipt.json. Its answer, “Can't tell”, differs from the one on screen: the receipt records the second check it ran.",
+   "statusRole": [
+    "status",
+    "polite"
+   ],
+   "saved": {
+    "color": "rgb(95, 99, 103)",
+    "weight": "400",
+    "display": "block"
+   },
+   "warn": {
+    "color": "rgb(158, 69, 38)",
+    "weight": "600",
+    "display": "inline"
+   },
+   "warnText": "Its answer, “Can't tell”, differs from the one on screen: the receipt records the second check it ran."
+  }
+ }
+}

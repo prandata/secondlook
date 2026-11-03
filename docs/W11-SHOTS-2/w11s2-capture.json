@@ -1,0 +1,85 @@
+{
+ "offHost": [],
+ "states": {
+  "2": {
+   "answer": "One reason to look closer",
+   "meta": "Engine: ladder · secondlook 62a1913769fc",
+   "versionTitle": "Commit 62a1913769fc6ccb81a4763efa22ed75397fafb4",
+   "pdfShown": true,
+   "json": {
+    "file": "street-canon.jpg.receipt.json",
+    "bytes": 5700,
+    "head": "{\n  \"ans",
+    "status": "Saved street-canon.jpg.receipt.json."
+   },
+   "pdf": {
+    "file": "street-canon.jpg.receipt.pdf",
+    "bytes": 55209,
+    "head": "%PDF-1.4",
+    "status": "Saved street-canon.jpg.receipt.pdf."
+   },
+   "againHover": {
+    "background": "rgb(158, 69, 38)",
+    "color": "rgb(244, 240, 230)"
+   }
+  },
+  "3": {
+   "answer": "Signed as a camera capture",
+   "signedTag": {
+    "background": "rgb(158, 69, 38)",
+    "color": "rgb(244, 240, 230)"
+   },
+   "pdf": {
+    "file": "01-camera-pixel10pro-atlantic-sign.jpg.receipt.pdf",
+    "bytes": 55621,
+    "head": "%PDF-1.4",
+    "status": "Saved 01-camera-pixel10pro-atlantic-sign.jpg.receipt.pdf."
+   }
+  },
+  "4": {
+   "timerCopy": "Running for 3 s. In our 12-image test run a deep check took 53 to 126 seconds an image; yours may be quicker or slower. It stops itself at 300 seconds.",
+   "invHover": {
+    "background": "rgb(158, 69, 38)",
+    "color": "rgb(244, 240, 230)"
+   },
+   "ms": 71649,
+   "status": "Deep check done in 70 s. Muse Glimmer called 4 of Second Look's checks, listed under “Checks Muse Glimmer called”. Fixed rules gave the answer, not the model.",
+   "invMeta": "Model: muse-glimmer · model time 44.7 s · whole deep check 69.5 s · secondlook 62a1913769fc",
+   "invVersionTitle": "Commit 62a1913769fc6ccb81a4763efa22ed75397fafb4",
+   "invMetaLines": 1,
+   "invMetaPhone": {
+    "height": 37,
+    "versionTop": 1605,
+    "versionHeight": 15
+   }
+  },
+  "5": {
+   "answer": "Can't tell",
+   "demoTag": {
+    "background": "rgb(158, 69, 38)",
+    "color": "rgb(244, 240, 230)"
+   },
+   "json": {
+    "file": "street-canon.jpg.receipt.json",
+    "bytes": 1751,
+    "head": "{\n  \"ans",
+    "status": "Saved street-canon.jpg.receipt.json."
+   }
+  }
+ },
+ "health": {
+  "capabilities": {
+   "engine": true,
+   "claims_index": true,
+   "voice": true,
+   "receipt": true,
+   "glimmer": true,
+   "batch": true
+  },
+  "glimmer": {
+   "ready": true,
+   "model": "muse-glimmer",
+   "vision": true
+  }
+ }
+}
